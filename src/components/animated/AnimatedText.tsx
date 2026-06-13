@@ -41,17 +41,24 @@ const AnimatedText = ({ children }: { children: React.ReactNode }) => {
             splitTextManually(el as HTMLElement);
 
             const chars = el.querySelectorAll(".char");
-            gsap.from(chars, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 80%",
-                    end: "top -10%",
-                    scrub: true,
-                    markers: false,
+            gsap.fromTo(chars, 
+                { 
+                    opacity: 0.2,
+                    color: "inherit"
                 },
-                opacity: 0.2,
-                stagger: 0.05,
-            });
+                {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        end: "top -10%",
+                        scrub: true,
+                        markers: false,
+                    },
+                    opacity: 1,
+                    color: "#9333ea",
+                    stagger: 0.05,
+                }
+            );
         });
 
         // Cleanup function to restore original content

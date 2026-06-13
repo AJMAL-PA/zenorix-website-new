@@ -16,24 +16,14 @@ import Routers from "./Routers";
 import { ToastContainer } from 'react-toastify';
 import Dependency from './components/utilities/Dependency';
 import RoutesScrollToTop from './components/utilities/RoutesScrollToTop';
-import { useState } from 'react';
-import Preloader from './components/utilities/Preloader';
 
 function App() {
-
-  //  Preloader
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <>
-      {isLoading ? <Preloader onFinished={() => setIsLoading(false)} /> :
-        <>
-          <Routers />
-          <RoutesScrollToTop />
-          <ToastContainer />
-          <Dependency />
-        </>
-      }
+      <Routers />
+      <RoutesScrollToTop />
+      <ToastContainer />
+      <Dependency />
     </>
   )
 }

@@ -24,10 +24,6 @@ const ServicesV2 = () => {
                         <div className="custom-container">
                             <div className="service-header-th">
                                 <img src={arrowDown} alt="icon" />
-                                3D Illustration
-                            </div>
-                            <div className="service-header-th">
-                                <img src={arrowDown} alt="icon" />
                                 Values
                             </div>
                         </div>

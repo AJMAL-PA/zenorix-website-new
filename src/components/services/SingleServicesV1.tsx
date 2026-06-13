@@ -9,7 +9,7 @@ interface DataType {
 }
 
 const SingleServicesV1 = ({ services }: { services: DataType }) => {
-    const { id, icon, name, thumb, activeClass } = services
+    const { id, icon, name, activeClass } = services
 
     return (
         <>
@@ -25,9 +25,6 @@ const SingleServicesV1 = ({ services }: { services: DataType }) => {
                         <span>III. Technology Enabling </span>
                         <span>IV. Mobile-First Systems</span>
                     </p>
-                    <div className="service-img-box">
-                        <img src={`/assets/images/${thumb}`} alt="Icon" />
-                    </div>
                 </div>
             </div>
         </>

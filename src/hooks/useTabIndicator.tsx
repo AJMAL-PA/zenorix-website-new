@@ -13,8 +13,6 @@ const useTabIndicator = ({ navRef, indicatorRef }: UseTabIndicatorProps) => {
             if (indicatorRef.current) {
                 const offsetLeft = element.offsetLeft;
 
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-expect-error
                 const width = element.offsetWidth;
                 indicatorRef.current.style.left = `${offsetLeft}px`;
                 indicatorRef.current.style.opacity = "1";

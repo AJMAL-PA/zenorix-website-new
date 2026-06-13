@@ -78,16 +78,11 @@ const defaultProps: Partial<HeroLandingProps> = {
 
 export function HeroLanding(props: HeroLandingProps) {
   const {
-    logo,
-    navigation,
-    loginText,
-    loginHref,
     title,
     description,
     announcementBanner,
     callToActions,
     titleSize,
-    gradientColors,
     className
   } = { ...defaultProps, ...props }
 
