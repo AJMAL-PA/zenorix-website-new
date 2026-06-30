@@ -9,12 +9,8 @@ const FeatureV1 = () => {
             <div className="feature-sec" id="projects">
                 <div className="custom-container">
                     <div className="section-header section-header2">
-                        <span className="section-subtitle">
-                            <img src={Union} alt="icon" />
-                            Our projects
-                        </span>
                         <h2 className="section-title section-title2">
-                            Featured WOW <span>Projects</span>
+                            Featured WOW <span>Products</span>
                         </h2>
                         <p className="section-desc">
                             Explore our collection of cutting-edge products designed to empower your business and elevate your creative potential. <br />

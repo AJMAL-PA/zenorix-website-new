@@ -25,5 +25,14 @@
         "subTitle2": "user experiences and intuitive interfaces.",
         "info": "User Interface",
         "date": "March 1st, 2024"
+    },
+    {
+        "id": 4,
+        "thumb": "project-4.jpg",
+        "projectName": "Zenorix Suite",
+        "subTitle1": "A premium SaaS toolkit offering powerful automation",
+        "subTitle2": "and performance monitoring for modern web apps.",
+        "info": "Software SaaS",
+        "date": "June 12th, 2024"
     }
 ]

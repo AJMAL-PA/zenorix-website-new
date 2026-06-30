@@ -19,7 +19,7 @@ const ServicesV1 = () => {
                         </AnimatedText>
                     </div>
                 </div>
-                
+
                 {/* Cards Section Heading */}
                 <div className="max-w-7xl mx-auto px-6 pt-4 pb-2">
                     <div className="flex items-end justify-between border-b border-white/10 pb-6 mb-2">
@@ -29,8 +29,8 @@ const ServicesV1 = () => {
                             </p>
                             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                                 Solutions Built
-                                <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
-                                    For Every Scale.
+                                <span className="block text-[#8c52ff]">
+                                    For Every Second.
                                 </span>
                             </h2>
                         </div>
@@ -44,37 +44,56 @@ const ServicesV1 = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6 py-12 justify-items-center">
                     {ServicesV1Data.slice(0, 3).map((service) => {
                         return (
-                            <GlowCard 
-                                key={service.id}
-                                glowColor="purple"
-                                customSize={true}
-                                className="w-[360px] h-[520px] p-8 flex flex-col justify-start relative text-left bg-black/40 border border-white/5"
-                            >
-                                <div className="flex flex-col h-full z-10">
-                                    {/* Icon circle with gradient & reflection */}
-                                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 bg-gradient-to-tr from-[#171c2c] to-[#121624] shadow-lg border border-white/10 relative overflow-hidden">
-                                        <div className="absolute top-0 left-0 w-2/3 h-2/3 opacity-40 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.5),transparent_80%)] blur-[10px]" />
-                                        <img src={`/assets/images/${service.icon}`} alt="icon" className="w-5 h-5 object-contain filter invert relative z-10" />
+                            <div key={service.id} className="group relative w-[360px] h-[260px] [perspective:1000px]">
+                                <div className="absolute inset-0 w-full h-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                                    
+                                    {/* Front Face */}
+                                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]">
+                                        <GlowCard
+                                            glowColor="purple"
+                                            customSize={true}
+                                            className="w-full h-full p-8 flex flex-col justify-start relative text-left bg-black/40 border border-white/5"
+                                        >
+                                            <div className="flex flex-col h-full z-10">
+                                                {/* Icon circle with gradient & reflection */}
+                                                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 bg-gradient-to-tr from-[#171c2c] to-[#121624] shadow-lg border border-white/10 relative overflow-hidden shrink-0">
+                                                    <div className="absolute top-0 left-0 w-2/3 h-2/3 opacity-40 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.5),transparent_80%)] blur-[10px]" />
+                                                    <img src={`/assets/images/${service.icon}`} alt="icon" className="w-5 h-5 object-contain filter invert relative z-10" />
+                                                </div>
+
+                                                {/* Title */}
+                                                <h3 className="text-2xl font-medium text-white mb-3 tracking-tight leading-snug">
+                                                    {service.name}
+                                                </h3>
+
+                                                {/* Description */}
+                                                <p className="text-sm text-gray-300 leading-relaxed font-light line-clamp-3">
+                                                    {service.text}
+                                                </p>
+                                            </div>
+                                        </GlowCard>
                                     </div>
 
-                                    {/* Title */}
-                                    <h3 className="text-2xl font-medium text-white mb-3 tracking-tight leading-snug">
-                                        {service.name}
-                                    </h3>
+                                    {/* Back Face */}
+                                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                                        <GlowCard
+                                            glowColor="purple"
+                                            customSize={true}
+                                            className="w-full h-full flex flex-col justify-center items-center relative overflow-hidden bg-black/40 border border-white/5 p-0"
+                                        >
+                                            <img src={`/assets/images/${service.thumb}`} alt={service.name} className="w-full h-full object-cover opacity-80" />
+                                        </GlowCard>
+                                    </div>
 
-                                    {/* Description */}
-                                    <p className="text-sm text-gray-300 leading-relaxed font-light">
-                                        {service.text}
-                                    </p>
                                 </div>
 
-                                {/* Full-card link overlay */}
-                                <Link 
-                                    to={`/service-details/${service.id}`} 
-                                    className="absolute inset-0 z-50 cursor-pointer"
+                                {/* Full-card link overlay placed on the outer wrapper so it's always clickable */}
+                                <Link
+                                    to={`/service-details/${service.id}`}
+                                    className="absolute inset-0 z-50 cursor-pointer block"
                                     aria-label={`Learn more about ${service.name}`}
                                 />
-                            </GlowCard>
+                            </div>
                         );
                     })}
                 </div>
