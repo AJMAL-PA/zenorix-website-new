@@ -1,72 +1,38 @@
 [
-    {
-        "id": 1,
-        "thumb": "project-1.jpg",
-        "name": "Dimension Dynamics",
-        "textFirst": "We collaborated closely with our client to",
-        "textLast": "transform their vision into a reality.",
-        "info": "Brand Identity",
-        "date": "May 6th, 2024",
-        "delay": "100"
-    },
-    {
-        "id": 2,
-        "thumb": "project-4.jpg",
-        "name": "Steinway Essentials",
-        "textFirst": "",
-        "textLast": "",
-        "info": "Web Design",
-        "date": "",
-        "delay": "100"
-    },
-    {
-        "id": 3,
-        "thumb": "project-5.jpg",
-        "name": "Sil’o Prints",
-        "textFirst": "",
-        "textLast": "",
-        "info": "Development",
-        "date": "",
-        "delay": "200"
-    },
-    {
-        "id": 4,
-        "thumb": "project-2.jpg",
-        "name": "Creative Nexus",
-        "textFirst": "We collaborated closely with our client to",
-        "textLast": "transform their vision into a reality.",
-        "info": "Marketing",
-        "date": "May 6th, 2024",
-        "delay": "100"
-    },
-    {
-        "id": 5,
-        "thumb": "project-6.jpg",
-        "name": "Innovative Horizon",
-        "textFirst": "",
-        "textLast": "",
-        "info": "Brand Identity",
-        "date": "",
-        "delay": "200"
-    },
-    {
-        "id": 6,
-        "thumb": "project-7.jpg",
-        "name": "Intuitive Interactions",
-        "textFirst": "",
-        "textLast": "",
-        "info": "Digital Marketing",
-        "date": "",
-        "delay": "100"
-    },
-    {
-        "id": 7,
-        "thumb": "project-3.jpg",
-        "name": "Creative Nexus",
-        "textFirst": "We collaborated closely with our client to",
-        "textLast": "transform their vision into a reality.",
-        "info": "User Interface",
-        "date": "May 6th, 2024",
-        "delay": "200"
-    }
+  {
+    "id": 1,
+    "thumb": "project-1.jpg",
+    "projectName": "Zellyo",
+    "subTitle1": "A no-code eCommerce platform empowering businesses",
+    "subTitle2": "to launch professional online stores in minutes.",
+    "info": "No-Code E-Commerce",
+    "date": "2026"
+  },
+  {
+    "id": 2,
+    "thumb": "project-2.jpg",
+    "projectName": "Zenbrix",
+    "subTitle1": "A complete business management platform built to",
+    "subTitle2": "streamline operations, sales, and team productivity.",
+    "info": "Business Management SaaS",
+    "date": "2026"
+  },
+  {
+    "id": 3,
+    "thumb": "project-3.jpg",
+    "projectName": "ZenFee",
+    "subTitle1": "A modern membership and subscription management",
+    "subTitle2": "solution for gyms, clubs, and service businesses.",
+    "info": "Subscription SaaS",
+    "date": "2026"
+  },
+  {
+    "id": 4,
+    "thumb": "project-4.jpg",
+    "projectName": "eMahal",
+    "subTitle1": "A comprehensive ERP platform designed to digitize",
+    "subTitle2": "business operations with finance, HR, and workflow tools.",
+    "info": "Enterprise ERP",
+    "date": "2026"
+  }
 ]

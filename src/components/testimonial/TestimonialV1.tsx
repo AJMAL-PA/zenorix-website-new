@@ -13,9 +13,6 @@ const TestimonialV1 = () => {
                     </span>
                 </div>
                 <div className="testimonial-lists-wrap">
-                    <div className="hover_mouse">
-                        <span>Showing Down...</span>
-                    </div>
                     <div className="testimonial-lists">
                         {TestimonialData.map(testimonial =>
                             <SingleTestimonialV1 testimonial={testimonial} key={testimonial.id} />

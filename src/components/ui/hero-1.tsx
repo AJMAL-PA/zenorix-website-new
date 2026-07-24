@@ -152,11 +152,11 @@ export function HeroLanding(props: HeroLandingProps) {
 
 
 
-      <div className="relative isolate px-6 pt-4 overflow-hidden min-h-screen flex flex-col justify-center">        
-        <div className="mx-auto max-w-4xl pt-28 sm:pt-36 pb-12">
+      <div className="relative isolate px-6 sm:px-12 lg:px-[72px] pt-4 overflow-hidden min-h-screen flex flex-col justify-end pb-20 sm:pb-28">        
+        <div className="mr-auto w-full max-w-4xl pt-28 sm:pt-36">
           {/* Announcement banner */}
           {announcementBanner && (
-            <div className="hidden sm:mb-2 sm:flex sm:justify-center">
+            <div className="hidden sm:mb-2 sm:flex sm:justify-start">
               <div className="relative rounded-full px-2 py-1 text-xs sm:px-3 sm:text-sm/6 text-muted-foreground ring-1 ring-border hover:ring-ring transition-all">
                 {announcementBanner.text}{' '}
                 <a href={announcementBanner.linkHref} className="font-semibold text-purple-500 hover:text-purple-400 transition-colors">
@@ -167,36 +167,19 @@ export function HeroLanding(props: HeroLandingProps) {
             </div>
           )}
           
-          <div className="text-center">
+          <div className="text-left flex flex-col items-start">
             <h1 
-              ref={titleRef}
-              onMouseMove={handleMouseMove}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className={`${getTitleSizeClasses()} font-semibold tracking-tight text-balance text-foreground relative inline-block`}
+              className={`${getTitleSizeClasses()} font-semibold tracking-tight text-balance text-foreground relative inline-block text-left`}
             >
               {title}
-              
-              {/* Cursor Spotlight Effect */}
-              <div 
-                className={`pointer-events-none absolute rounded-full border border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.4)] mix-blend-screen transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  left: mousePosition.x - 50,
-                  top: mousePosition.y - 50,
-                  background: 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(168,85,247,0) 70%)',
-                  zIndex: 10
-                }}
-              />
             </h1>
-            <p className="mt-6 sm:mt-8 text-base sm:text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8 text-left max-w-2xl">
               {description}
             </p>
             
             {/* Call to action buttons */}
             {callToActions && callToActions.length > 0 && (
-              <div className="mt-8 sm:mt-10 flex items-center justify-center gap-x-4 sm:gap-x-6">
+              <div className="mt-8 sm:mt-10 flex items-center justify-start gap-x-4 sm:gap-x-6">
                 {callToActions.map((cta, index) => renderCallToAction(cta, index))}
               </div>
             )}

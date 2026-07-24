@@ -1,4 +1,5 @@
 import AboutV2 from "../../components/about/AboutV2";
+import WhyZenorix from "../../components/why/WhyZenorix";
 import ContactV1 from "../../components/contact/ContactV1";
 import FaqV1 from "../../components/faq/FaqV1";
 import HeroV2 from "../../components/hero/AboutHero";
@@ -16,6 +17,7 @@ const AboutPage = () => {
                 <HeroV2 title="About Us" />
                 <LogoMarquee />
                 <AboutV2 />
+                <WhyZenorix />
                 <ServicesV2 />
                 <ProcessV1 />
                 <FaqV1 />

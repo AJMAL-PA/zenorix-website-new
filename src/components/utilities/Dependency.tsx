@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { ScrollToTop } from "react-simple-scroll-up";
 import AOS from "aos";
-import MagicCursor from "../animated/MagicCursor";
 
 const Dependency = () => {
 
@@ -20,7 +19,6 @@ const Dependency = () => {
 
     return (
         <>
-            <MagicCursor />
             <ScrollToTop symbol={<i className="fas fa-long-arrow-up" aria-hidden="true"></i>} aria-hidden="true" />
         </>
     );

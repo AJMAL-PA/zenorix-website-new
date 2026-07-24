@@ -71,6 +71,9 @@ const HeaderSidebar = () => {
                                 <a href="#about" onClick={handleCloseClick}>About Us</a>
                             </li>
                             <li>
+                                <a href="#why-zenorix" onClick={handleCloseClick}>Why Zenorix</a>
+                            </li>
+                            <li>
                                 <a href="#services" onClick={handleCloseClick}>Services</a>
                             </li>
                             <li>

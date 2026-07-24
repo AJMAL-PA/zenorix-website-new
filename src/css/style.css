@@ -3720,3 +3720,20 @@ a {
     position: relative;
     top: 3px;
 }
+
+/* Header Contact Button Wrapper */
+.header-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Hide on mobile devices */
+@media (max-width: 1024px) {
+    .header-contact-btn {
+        display: none !important;
+    }
+}

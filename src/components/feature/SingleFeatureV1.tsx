@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import useHoverEffect from "../../hooks/useHoverEffect";
 
 interface DataType {
     id?: number;
@@ -14,13 +13,8 @@ interface DataType {
 const SingleFeatureV1 = ({ feature }: { feature: DataType }) => {
     const { id, thumb, projectName, subTitle1, subTitle2, info, date } = feature;
 
-    const { containerRef, hoverElementRef } = useHoverEffect();
-
     return (
-        <div className="feature-project" ref={containerRef}>
-            {/* <div className="hover_mouse" ref={hoverElementRef}>
-                <Link to={`/project-details/${id}`}>View</Link>
-            </div> */}
+        <div className="feature-project">
             <div className="img-box">
                 <img src={`/assets/images/${thumb}`} alt="image" />
             </div>

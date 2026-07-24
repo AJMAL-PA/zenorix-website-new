@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import NavHeader from "@/components/ui/nav-header";
+import { NeonButton } from "@/components/ui/neon-button";
+import { ArrowRight } from "lucide-react";
 
 const HeaderMenu = () => {
     return (
@@ -56,6 +58,30 @@ const HeaderMenu = () => {
                         >
                             <NavHeader />
                         </nav>
+
+                        {/* Contact Us — right-anchored button */}
+                        <div
+                            style={{
+                                marginLeft: 'auto',
+                                display: 'flex',
+                                alignItems: 'center',
+                                zIndex: 1,
+                            }}
+                        >
+                            <Link to="/contact" className="header-contact-btn">
+                                <NeonButton
+                                    variant="outline"
+                                    size="default"
+                                    neon
+                                    className="text-xs sm:text-sm font-semibold border-purple-800 hover:border-purple-600 shadow-[0_0_12px_1px_rgba(147,51,234,0.15)] hover:shadow-[0_0_22px_3px_rgba(147,51,234,0.35)] hover:brightness-110 hover:bg-gradient-to-br hover:from-[#4c1d95] hover:via-[#2e0854] hover:to-[#1c0036] transition-all duration-300 flex items-center justify-between gap-3 pl-6 pr-1.5 py-1.5"
+                                >
+                                    <span>Get in Touch</span>
+                                    <span className="w-7 h-7 rounded-full bg-white text-black flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-105 shadow-[0_0_12px_rgba(255,255,255,0.6)]">
+                                        <ArrowRight className="w-3.5 h-3.5" />
+                                    </span>
+                                </NeonButton>
+                            </Link>
+                        </div>
 
                     </div>
                 </div>

@@ -13,11 +13,9 @@ interface NavHeaderProps {
 
 const defaultItems: NavItem[] = [
   { label: "About Us", href: "/about" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Services", href: "/services" },
-  { label: "Why Us", href: "/why-us" },
-  { label: "FAQs", href: "/faqs" },
-  { label: "Book Now", href: "/book-now" },
+  { label: "Why Us", href: "#why-zenorix" },
+  { label: "Services", href: "/#projects" },
+  { label: "FAQs", href: "/faq" },
 ];
 
 function NavHeader({ items = defaultItems }: NavHeaderProps) {

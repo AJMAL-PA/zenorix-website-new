@@ -1,4 +1,5 @@
 import AboutV1 from "../../components/about/AboutV1";
+import WhyZenorix from "../../components/why/WhyZenorix";
 import AwardsV1 from "../../components/awards/AwardsV1";
 import ContactV1 from "../../components/contact/ContactV1";
 import FeatureV1 from "../../components/feature/FeatureV1";
@@ -18,7 +19,8 @@ const Home1Page = () => {
                 <HeroV1 />
                 <LogoMarquee />
                 <AboutV1 />
-                <ServicesV1 />
+                <WhyZenorix />
+                {/* <ServicesV1 /> */}
                 <FeatureV1 />
                 {/* <AwardsV1 /> */}
                 <TeamV1 />

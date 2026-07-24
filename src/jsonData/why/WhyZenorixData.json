@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "number": "01",
+    "icon": "Cpu",
+    "title": "Cutting-Edge Engineering",
+    "description": "We architect robust, scalable software utilizing modern, high-performance tech stacks, ensuring lightning-fast load times, flawless responsiveness, and cloud-native security."
+  },
+  {
+    "id": 2,
+    "number": "02",
+    "icon": "Sparkles",
+    "title": "Bespoke & Premium UI/UX",
+    "description": "Every design system we create is crafted with visual excellence, fluid micro-interactions, and human-centered design principles that captivate users and elevate your brand."
+  },
+  {
+    "id": 3,
+    "number": "03",
+    "icon": "Zap",
+    "title": "Agile & High-Speed Execution",
+    "description": "Our streamlined development process guarantees rapid prototyping, continuous integration, zero guesswork, and on-time project delivery with transparent milestones."
+  },
+  {
+    "id": 4,
+    "number": "04",
+    "icon": "TrendingUp",
+    "title": "Growth & ROI Focused",
+    "description": "We don't just write code; we engineer digital products optimized for user retention, search engine authority, high conversion rates, and measurable business growth."
+  },
+  {
+    "id": 5,
+    "number": "05",
+    "icon": "ShieldCheck",
+    "title": "Uncompromised Quality & Security",
+    "description": "Rigorous automated testing, security audits, and enterprise-grade infrastructure ensure your digital assets operate with maximum uptime and reliability."
+  },
+  {
+    "id": 6,
+    "number": "06",
+    "icon": "Headphones",
+    "title": "Dedicated Strategic Partnership",
+    "description": "We function as your extended technical leadership team, offering ongoing strategic consultation, post-launch scaling guidance, and proactive updates."
+  }
+]
