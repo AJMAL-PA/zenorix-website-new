@@ -16,16 +16,16 @@ import Routers from "./Routers";
 import { ToastContainer } from 'react-toastify';
 import Dependency from './components/utilities/Dependency';
 import RoutesScrollToTop from './components/utilities/RoutesScrollToTop';
-import SocialSidebar from './components/social/SocialSidebar';
+import Chatbot from './components/chatbot/Chatbot';
 
 function App() {
   return (
     <>
       <Routers />
-      <SocialSidebar />
       <RoutesScrollToTop />
       <ToastContainer />
       <Dependency />
+      <Chatbot />
     </>
   )
 }

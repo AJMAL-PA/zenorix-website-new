@@ -15,7 +15,7 @@ import TestimonialV1 from "../../components/testimonial/TestimonialV1";
 const Home1Page = () => {
     return (
         <div className="aixor-main">
-            <LayoutV1>
+            <LayoutV1 hideHeader>
                 <HeroV1 />
                 <LogoMarquee />
                 <AboutV1 />

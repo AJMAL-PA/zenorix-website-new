@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutV1 = () => {
     return (
-        <section className="about-sec py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] bg-black text-white relative overflow-hidden" id="about">
+        <section className="about-sec py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] bg-white text-neutral-900 relative overflow-hidden" id="about">
             <div className="max-w-[1640px] mx-auto">
                 {/* Top Section */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
@@ -15,7 +15,7 @@ const AboutV1 = () => {
                             <svg className="w-3.5 h-3.5 text-purple-500 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
-                            <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-semibold">
+                            <span className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold">
                                 About Company
                             </span>
                         </div>
@@ -44,7 +44,7 @@ const AboutV1 = () => {
 
                     {/* Right Column */}
                     <div className="md:col-span-7 flex flex-col gap-6 md:gap-8 justify-between h-full">
-                        <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-2xl lg:text-3xl text-neutral-700 font-normal leading-relaxed max-w-2xl">
                             Zenorix is a premier digital agency building high-performance web applications, scalable software, and stunning user experiences. We integrate cutting-edge technology with premium design to accelerate business growth.
                         </p>
                         
@@ -66,36 +66,36 @@ const AboutV1 = () => {
                 <div className="h-20 md:h-28"></div>
 
                 {/* Bottom Section - Statistics */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 border-t border-white/10 pt-16">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 border-t border-neutral-200 pt-16">
                     {/* Stat 1 */}
                     <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
+                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-neutral-900 font-urbanist">
                             <CountUp end={4} enableScrollSpy scrollSpyOnce />
                             <span className="text-purple-500 ml-1">+</span>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
+                        <p className="mt-3 text-xs sm:text-sm text-neutral-500 uppercase tracking-[0.15em] font-medium">
                             Years of Experience
                         </p>
                     </div>
 
                     {/* Stat 2 */}
                     <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
+                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-neutral-900 font-urbanist">
                             <CountUp end={50} enableScrollSpy scrollSpyOnce />
                             <span className="text-purple-500 ml-1">+</span>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
+                        <p className="mt-3 text-xs sm:text-sm text-neutral-500 uppercase tracking-[0.15em] font-medium">
                             Projects Delivered
                         </p>
                     </div>
 
                     {/* Stat 3 */}
                     <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
+                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-neutral-900 font-urbanist">
                             <CountUp end={30} enableScrollSpy scrollSpyOnce />
                             <span className="text-purple-500 ml-1">+</span>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
+                        <p className="mt-3 text-xs sm:text-sm text-neutral-500 uppercase tracking-[0.15em] font-medium">
                             Happy Clients
                         </p>
                     </div>

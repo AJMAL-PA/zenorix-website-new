@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ScrollToTop } from "react-simple-scroll-up";
+import { ScrollToTop } from "./ScrollToTop";
 import AOS from "aos";
 
 const Dependency = () => {

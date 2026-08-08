@@ -3,12 +3,13 @@ import HeaderV1 from "../header/HeaderV1";
 
 interface DataType {
     children?: React.ReactNode;
+    hideHeader?: boolean;
 }
 
-const LayoutV1 = ({ children }: DataType) => {
+const LayoutV1 = ({ children, hideHeader }: DataType) => {
     return (
         <>
-            <HeaderV1 />
+            {!hideHeader && <HeaderV1 />}
             {children}
             <FooterV1 />
         </>

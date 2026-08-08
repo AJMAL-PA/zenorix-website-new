@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 265 100% 66%; /* Deep purple #8c52ff */
+    --primary: 265 100% 50%; /* Deep purple #7c3aed */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 10% 3.9%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 265 100% 66%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 265 100% 50%;
 
     --radius: 0.5rem;
   }
@@ -49,9 +49,9 @@
 :root {
     --font_arapey: "Arapey", serif;
     --font_urbanist: "Urbanist", sans-serif;
-    --primary: #ffffff;
-    --secondary: #999999;
-    --tertiary: #666666;
+    --primary: #111111;
+    --secondary: #555555;
+    --tertiary: #777777;
 }
 
 /* ======================================
@@ -109,7 +109,7 @@ ol {
 }
 
 body {
-    background: #000;
+    background: #ffffff;
     font-size: 14px;
     font-weight: 500;
     font-family: var(--font_urbanist);
@@ -793,7 +793,7 @@ a {
     justify-content: center;
     border-radius: 50%;
     gap: 5px;
-    background: #1a1a1a;
+    background: #f3f4f6;
     cursor: pointer;
     transform: scale(0);
     transition: .3s;
@@ -805,18 +805,18 @@ a {
 }
 
 .hamburg-menu:hover {
-    background: #ffffff;
+    background: #8c52ff;
 }
 
 .hamburg-menu:hover span {
-    background: #000000;
+    background: #ffffff;
 }
 
 .hamburg-menu span {
     display: block;
     width: 20px;
     height: 1px;
-    background: #ffffff;
+    background: #111111;
     transition: .3s;
     -webkit-transition: .3s;
 }
@@ -969,7 +969,7 @@ a {
 /* ===== # About ===== */
 .about-sec {
     padding: 90px 72px;
-    background: #000;
+    background: #ffffff;
 }
 
 .about-sec .section-header {
@@ -1105,15 +1105,14 @@ a {
 }
 
 .team-member-box {
-    padding: 10px;
-    position: relative;
     overflow: hidden;
     z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 36px;
     border-radius: 16px;
-    background: linear-gradient(180deg, #1f1f1f 0%, rgb(0, 0, 0) 35%, rgb(0, 0, 0) 65%, rgb(31, 31, 31) 100%);
+    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 35%, #ffffff 65%, #f9fafb 100%);
+    border: 1px solid #e5e7eb;
 }
 
 .team-member-box .img-box img {
@@ -1433,13 +1432,14 @@ a {
 }
 
 .feature-project {
-    background: linear-gradient(180deg, #1f1f1f 0%, rgb(0, 0, 0) 35%, rgb(0, 0, 0) 65%, rgb(31, 31, 31) 100%);
+    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 35%, #ffffff 65%, #f9fafb 100%);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 36px;
     height: 98vh;
     width: 100%;
+    border: 1px solid #e5e7eb;
     top: 8px;
     overflow: hidden;
     position: sticky;
@@ -1926,7 +1926,7 @@ a {
 
 .service-box.active,
 .service-box:hover {
-    background: #1a1a1a;
+    background: #f3f4f6;
 }
 
 .service-box.active .service-inner .service-feature-description p,
@@ -2055,9 +2055,10 @@ a {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    background: linear-gradient(180deg, #1f1f1f 0%, rgb(0, 0, 0) 35%, rgb(0, 0, 0) 65%, rgb(31, 31, 31) 100%);
+    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 35%, #ffffff 65%, #f9fafb 100%);
     border-radius: 16px;
     padding: 24px;
+    border: 1px solid #e5e7eb;
     position: relative;
     height: 428px;
     gap: 58px;
@@ -2138,8 +2139,9 @@ a {
 
 .faq-lists {
     position: relative;
-    background: linear-gradient(0deg, #1f1f1f 0%, #000000 35%, #000000 65%, #1f1f1f 100%);
+    background: linear-gradient(0deg, #f9fafb 0%, #ffffff 35%, #ffffff 65%, #f9fafb 100%);
     border-radius: 16px;
+    border: 1px solid #e5e7eb;
 }
 
 .faq-lists .shape_img img {
@@ -2679,7 +2681,7 @@ a {
 
 /* ===== # Contact ===== */
 .contact-sec {
-    background-color: #000;
+    background-color: #ffffff;
     background-image: none;
     padding: 90px 72px 90px 72px;
 }
