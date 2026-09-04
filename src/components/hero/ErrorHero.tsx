@@ -1,5 +1,5 @@
-import contact from '/assets/images/contact.png';
 import btnArrow from '/assets/images/btn-arrow.svg';
+import zenorixLogo from '/assets/images/logothemetransparent.png';
 import { Link } from "react-router-dom";
 
 const ErrorHero = () => {
@@ -8,7 +8,7 @@ const ErrorHero = () => {
             <div className="hero-sec error-hero-sec">
                 <div className="custom-container">
                     <div className="hero-inner">
-                        <img className="hero-shape" src={contact} alt="Shape" />
+                        <img className="hero-shape logo-3d-rotate" src={zenorixLogo} alt="Zenorix Logo" style={{ maxWidth: '300px', opacity: 0.8 }} />
                         <div className="hero-bottom error-box">
                             <div className="left">
                                 <h2><span>Oops!</span> Page Not<br />Found (404)</h2>

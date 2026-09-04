@@ -17,6 +17,7 @@ import { ToastContainer } from 'react-toastify';
 import Dependency from './components/utilities/Dependency';
 import RoutesScrollToTop from './components/utilities/RoutesScrollToTop';
 import Chatbot from './components/chatbot/Chatbot';
+import ContactPopup from './components/utilities/ContactPopup';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <ToastContainer />
       <Dependency />
       <Chatbot />
+      <ContactPopup />
     </>
   )
 }

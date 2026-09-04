@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "thumb": "project-1.jpg",
+    "thumb": "zellyo-cover.png",
     "projectName": "Zellyo",
     "subTitle1": "A no-code eCommerce platform empowering businesses",
     "subTitle2": "to launch professional online stores in minutes.",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "thumb": "project-2.jpg",
+    "thumb": "zenbrix-cover.png",
     "projectName": "Zenbrix",
     "subTitle1": "A complete business management platform built to",
     "subTitle2": "streamline operations, sales, and team productivity.",

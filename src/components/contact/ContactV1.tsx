@@ -1,5 +1,5 @@
 import btnArrow from '/assets/images/btn-arrow.svg';
-import contactThumb from '/assets/images/contact.png';
+import zenorixLogo from '/assets/images/logothemetransparent.png';
 import { toast } from 'react-toastify';
 
 const ContactV1 = () => {
@@ -45,9 +45,9 @@ const ContactV1 = () => {
                             <div id="result" />
                         </div>
                     </div>
-                    <div className="right">
-                        <div className="img-box">
-                            <img src={contactThumb} alt="contact-img" />
+                    <div className="right flex justify-center items-center">
+                        <div className="img-box max-w-sm opacity-80">
+                            <img src={zenorixLogo} alt="Zenorix Logo" className="w-full h-auto logo-3d-rotate" />
                         </div>
                     </div>
                 </div>

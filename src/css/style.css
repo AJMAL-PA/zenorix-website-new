@@ -3739,3 +3739,16 @@ a {
         display: none !important;
     }
 }
+
+/* 3D Logo Animation */
+.logo-3d-rotate {
+    animation: sphericalRotate 8s infinite linear;
+    filter: drop-shadow(0px 15px 30px rgba(139, 92, 246, 0.45));
+    transform-style: preserve-3d;
+}
+
+@keyframes sphericalRotate {
+    0% { transform: perspective(800px) rotateY(0deg) rotateX(15deg); }
+    50% { transform: perspective(800px) rotateY(180deg) rotateX(-15deg); }
+    100% { transform: perspective(800px) rotateY(360deg) rotateX(15deg); }
+}

@@ -1,5 +1,5 @@
-import contact from '/assets/images/contact.png';
 import btnArrow from '/assets/images/btn-arrow.svg';
+import zenorixLogo from '/assets/images/logothemetransparent.png';
 import { Link } from "react-router-dom";
 
 interface DataType {
@@ -12,7 +12,7 @@ const HeroV2 = ({ title }: DataType) => {
             <div className="hero-sec about-hero-sec" id="hero">
                 <div className="custom-container">
                     <div className="hero-inner">
-                        <img className="hero-shape" src={contact} alt="Shape" />
+                        <img className="hero-shape logo-3d-rotate" src={zenorixLogo} alt="Zenorix Logo" style={{ maxWidth: '300px', opacity: 0.8 }} />
                         <div className="hero-top">
                             <div className="hero-top-desc">
                                 <p>{`"At AIXOR, we hold that creativity sparks innovation. As a full-spectrum creative firm, we excel in converting ambitious ideas into engaging results."`}</p>

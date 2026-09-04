@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "thumb": "urban-scholar.jpg",
+    "projectName": "Urban Scholar",
+    "category": "Website",
+    "year": "2026",
+    "info": "Education & E-Learning",
+    "link": "/project-details/1"
+  },
+  {
+    "id": 2,
+    "thumb": "amala-matrimony.jpg",
+    "projectName": "Amala Matrimony",
+    "category": "Mobile App Design",
+    "year": "2026",
+    "info": "Matchmaking & Social",
+    "link": "/project-details/2"
+  },
+  {
+    "id": 3,
+    "thumb": "epsrr-ecommerce.jpg",
+    "projectName": "Epsrr Fashion Studio",
+    "category": "E-Commerce Design",
+    "year": "2026",
+    "info": "Luxury Fashion",
+    "link": "/project-details/3"
+  },
+  {
+    "id": 4,
+    "thumb": "zenbrix-cover.png",
+    "projectName": "Zenbrix Enterprise",
+    "category": "SaaS Platform",
+    "year": "2026",
+    "info": "Business Management SaaS",
+    "link": "/project-details/4"
+  }
+]
