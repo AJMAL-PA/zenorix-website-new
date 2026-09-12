@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "thumb": "urban-scholar.jpg",
-    "projectName": "Urban Scholar",
-    "category": "Website",
+    "thumb": "nivo-concepts.png",
+    "projectName": "Nivo Concepts",
+    "category": "Architecture & Interiors",
     "year": "2026",
-    "info": "Education & E-Learning",
+    "info": "Architecture & Interior Design",
     "link": "/project-details/1"
   },
   {
@@ -19,11 +19,11 @@
   },
   {
     "id": 3,
-    "thumb": "epsrr-ecommerce.jpg",
-    "projectName": "Epsrr Fashion Studio",
-    "category": "E-Commerce Design",
+    "thumb": "hamme.png",
+    "projectName": "Hamme",
+    "category": "Mobile App",
     "year": "2026",
-    "info": "Luxury Fashion",
+    "info": "Beauty & Skincare Mobile App",
     "link": "/project-details/3"
   },
   {

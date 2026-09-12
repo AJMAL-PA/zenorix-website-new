@@ -1,42 +1,58 @@
 [
     {
         "id": 1,
-        "thumb": "team_shahdiya.png",
-        "name": "SHAHDIYA",
-        "designation": "Junior 3D Visualiser",
-        "text": "Shahdiya excels at crafting high-end 3D environments and architectural designs.",
+        "thumb": "team_shamil_shan.png",
+        "name": "Shamil Shan",
+        "designation": "Co-Founder, Designer",
+        "text": "Shamil is the Co-Founder and lead designer crafting innovative concepts and exceptional aesthetics.",
         "delay": 0
     },
     {
         "id": 2,
-        "thumb": "team_hanna.png",
-        "name": "HANNA",
-        "designation": "2D Draft Person",
-        "text": "Hanna is highly skilled in drafting precise technical drawings and architectural layouts.",
+        "thumb": "team_mhd_afnan.png",
+        "name": "Mhd Afnan",
+        "designation": "Co-Founder, Developer",
+        "text": "Afnan is the Co-Founder and lead developer architecting robust and scalable digital solutions.",
         "delay": 200
     },
     {
         "id": 3,
-        "thumb": "team1.png",
-        "name": "DANIEL JACK",
-        "designation": "Lead Structural Engineer",
-        "text": "Daniel oversees structural planning and integrity verification for premium developments.",
+        "thumb": "team_nihadh_hasni.png",
+        "name": "Nihadh Hasni",
+        "designation": "Co-Founder",
+        "text": "Nihadh is the Co-Founder driving strategic growth and executive leadership.",
         "delay": 400
     },
     {
         "id": 4,
-        "thumb": "team3.png",
-        "name": "ANDREW ONANA",
-        "designation": "Principal Architect",
-        "text": "Andrew brings luxury conceptual aesthetics and sustainable architectural practices to life.",
-        "delay": 0
+        "thumb": "team_aswin_kp.png",
+        "name": "Aswin KP",
+        "designation": "CMO, Editor",
+        "text": "Aswin is the CMO and lead editor leading brand marketing, media storytelling, and creative direction.",
+        "delay": 600
     },
     {
         "id": 5,
-        "thumb": "team2.png",
-        "name": "BOB PASLEY",
-        "designation": "Design Specialist",
-        "text": "Bob focuses on detailed styling, landscape drafting, and final aesthetic reviews.",
-        "delay": 200
+        "thumb": "team_aman_husain.png",
+        "name": "Aman Husain",
+        "designation": "Developer",
+        "text": "Aman is a developer building seamless and modern digital applications.",
+        "delay": 800
+    },
+    {
+        "id": 6,
+        "thumb": "team_jinto_raj.png",
+        "name": "Jinto Raj",
+        "designation": "BDA",
+        "text": "Jinto is a BDA driving business development and growth strategies.",
+        "delay": 1000
+    },
+    {
+        "id": 7,
+        "thumb": "team_ajmal.png",
+        "name": "Ajmal",
+        "designation": "Developer, BDA",
+        "text": "Ajmal is a developer and BDA driving technical excellence and business strategy.",
+        "delay": 1200
     }
 ]

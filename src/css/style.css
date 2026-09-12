@@ -253,8 +253,9 @@ a {
 }
 
 .section-title.section-title2 {
-    background: linear-gradient(90deg, rgb(255, 255, 255) 16%, rgb(77, 77, 77) 140%);
+    background: linear-gradient(90deg, #9333ea 0%, #7c3aed 60%, #6366f1 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-style: italic;
     line-height: 110px;
@@ -268,6 +269,8 @@ a {
 .section-title.section-title2 span {
     font-style: normal;
     font-family: var(--font_urbanist);
+    color: #111111;
+    -webkit-text-fill-color: #111111;
     /* font-family: var(--font_arapey); */
 }
 

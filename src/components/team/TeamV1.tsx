@@ -45,45 +45,53 @@ const TeamV1 = () => {
     }
   }, [isTransitioning]);
 
-  // Translation offset calculations
+  // Translation offset calculations for 20px gap (gap-5)
+  // Mobile: 1 card visible -> (100% + 20px)
+  // Tablet: 2 cards visible -> (50% + 10px)
+  // Desktop: 4 cards visible -> (25% + 5px)
   const translateValue = isMobile
-    ? `calc(-${currentIndex} * (100% + 24px))`
+    ? `calc(-${currentIndex} * (100% + 20px))`
     : isTablet
-    ? `calc(-${currentIndex} * (50% + 12px))`
-    : `calc(-${currentIndex} * (33.333% + 8px))`;
+    ? `calc(-${currentIndex} * (50% + 10px))`
+    : `calc(-${currentIndex} * (25% + 5px))`;
 
   const extendedData = [...TeamV1Data, ...TeamV1Data, ...TeamV1Data];
 
   return (
-    <section className="py-20 md:py-24 bg-white text-black w-full overflow-hidden" id="team">
-      <div className="max-w-[1536px] mx-auto px-6 lg:px-8">
+    <section className="py-20 md:py-28 px-6 sm:px-12 lg:px-0 bg-white text-neutral-900 w-full overflow-hidden border-t border-neutral-200" id="team">
+      <div className="max-w-[1640px] mx-auto relative z-10">
         
         {/* Header Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-14 md:mb-16 lg:px-[72px]">
           {/* Title Area */}
-          <div className="md:col-span-5 space-y-3">
-            <span className="text-xs font-bold tracking-[0.2em] text-purple-600 uppercase block font-sans">
-              Our Team
-            </span>
-            <h2 className="text-3xl md:text-4.5xl font-bold font-sans tracking-wide text-neutral-900 leading-tight uppercase">
+          <div className="lg:col-span-5 space-y-3">
+            <div className="flex items-center gap-3">
+              <svg className="w-3.5 h-3.5 text-purple-600 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span className="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase block font-sans">
+                Our Team
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-wide text-neutral-900 leading-tight uppercase">
               Meet the Experts<br />Behind Our Work
             </h2>
           </div>
 
           {/* Description Area */}
-          <div className="md:col-span-5 md:pl-4">
-            <p className="text-neutral-600 text-sm md:text-base leading-relaxed font-sans font-light">
-              Our structural engineers, architects, and design specialists collaborate to deliver
-              world-class properties built with structural integrity and custom aesthetic appeal.
+          <div className="lg:col-span-5">
+            <p className="text-neutral-600 text-base md:text-lg leading-relaxed font-sans font-light">
+              Our passionate innovators and leaders collaborate to deliver
+              world-class digital experiences built with excellence, precision, and custom aesthetic appeal.
             </p>
           </div>
 
-          {/* Controls Area */}
-          <div className="md:col-span-2 flex justify-end items-center gap-3">
+          {/* Controls Area (Infinite loop - no stop) */}
+          <div className="lg:col-span-2 flex justify-end items-center gap-3">
             {/* Prev Button */}
             <button
               onClick={handlePrev}
-              className="w-11 h-11 rounded-full flex items-center justify-center transition-all bg-purple-600 hover:bg-purple-700 text-white hover:scale-105"
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-purple-600 text-white hover:scale-105 shadow-sm cursor-pointer"
               aria-label="Previous team members"
             >
               <svg
@@ -105,7 +113,7 @@ const TeamV1 = () => {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="w-11 h-11 rounded-full flex items-center justify-center transition-all bg-purple-600 hover:bg-purple-700 text-white hover:scale-105"
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-purple-600 text-white hover:scale-105 shadow-sm cursor-pointer"
               aria-label="Next team members"
             >
               <svg
@@ -127,9 +135,9 @@ const TeamV1 = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative w-full overflow-visible">
+        <div className="relative w-full overflow-hidden">
           <div
-            className={`flex flex-row gap-6 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+            className={`flex flex-row gap-5 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
             style={{
               transform: `translateX(${translateValue})`,
             }}

@@ -5,12 +5,12 @@ import SingleSelectedWork, { SelectedWorkType } from "./SingleSelectedWork";
 
 const SelectedWork = () => {
     return (
-        <section className="bg-white text-neutral-900 py-20 md:py-28 px-6 sm:px-10 lg:px-16 relative overflow-hidden border-t border-neutral-200" id="selected-work">
+        <section className="bg-white text-neutral-900 py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] relative overflow-hidden border-t border-neutral-200" id="selected-work">
             {/* Ambient Purple Background Glows */}
             <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-purple-100/40 blur-[140px] pointer-events-none rounded-full" />
             <div className="absolute bottom-10 right-1/4 w-[450px] h-[350px] bg-indigo-100/30 blur-[140px] pointer-events-none rounded-full" />
 
-            <div className="max-w-[1536px] mx-auto relative z-10">
+            <div className="max-w-[1640px] mx-auto relative z-10">
                 {/* Top Section Header Row */}
                 <div className="flex items-center justify-between pb-8 md:pb-10 border-b border-neutral-200 mb-10 md:mb-14">
                     {/* Left: Purple Indicator + Title */}

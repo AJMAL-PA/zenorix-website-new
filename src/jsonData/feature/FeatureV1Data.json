@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "thumb": "project-1.jpg",
+    "thumb": "zellyo-cover.png",
     "projectName": "Zellyo",
     "subTitle1": "A no-code eCommerce platform empowering businesses",
     "subTitle2": "to launch professional online stores in minutes.",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "thumb": "project-2.jpg",
+    "thumb": "zenbrix-cover.png",
     "projectName": "Zenbrix",
     "subTitle1": "A complete business management platform built to",
     "subTitle2": "streamline operations, sales, and team productivity.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "thumb": "project-3.jpg",
+    "thumb": "urban-scholar.jpg",
     "projectName": "ZenFee",
     "subTitle1": "A modern membership and subscription management",
     "subTitle2": "solution for gyms, clubs, and service businesses.",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "thumb": "project-4.jpg",
+    "thumb": "nivo-concepts.png",
     "projectName": "eMahal",
     "subTitle1": "A comprehensive ERP platform designed to digitize",
     "subTitle2": "business operations with finance, HR, and workflow tools.",
