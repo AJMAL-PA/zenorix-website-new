@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "thumb": "nivo-concepts.png",
+    "projectName": "Nivo Concepts",
+    "category": "Architecture & Interiors",
+    "year": "2026",
+    "info": "Architecture & Interior Design",
+    "link": "/project-details/1"
+  },
+  {
+    "id": 2,
+    "thumb": "amala-matrimony.jpg",
+    "projectName": "Amala Matrimony",
+    "category": "Mobile App Design",
+    "year": "2026",
+    "info": "Matchmaking & Social",
+    "link": "/project-details/2"
+  },
+  {
+    "id": 3,
+    "thumb": "hamme.png",
+    "projectName": "Hamme",
+    "category": "Mobile App",
+    "year": "2026",
+    "info": "Beauty & Skincare Mobile App",
+    "link": "/project-details/3"
+  },
+  {
+    "id": 4,
+    "thumb": "zenbrix-cover.png",
+    "projectName": "Zenbrix Enterprise",
+    "category": "SaaS Platform",
+    "year": "2026",
+    "info": "Business Management SaaS",
+    "link": "/project-details/4"
+  }
+]

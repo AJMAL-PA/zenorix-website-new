@@ -9,19 +9,21 @@ import LogoMarquee from "../../components/partner/LogoMarquee";
 import PartnerV1 from "../../components/partner/PartnerV1";
 import PriceV1 from "../../components/pricing/PriceV1";
 import ServicesV1 from "../../components/services/ServicesV1";
+import SelectedWork from "../../components/work/SelectedWork";
 import TeamV1 from "../../components/team/TeamV1";
 import TestimonialV1 from "../../components/testimonial/TestimonialV1";
 
 const Home1Page = () => {
     return (
         <div className="aixor-main">
-            <LayoutV1>
+            <LayoutV1 hideHeader>
                 <HeroV1 />
                 <LogoMarquee />
                 <AboutV1 />
                 <WhyZenorix />
                 {/* <ServicesV1 /> */}
                 <FeatureV1 />
+                <SelectedWork />
                 {/* <AwardsV1 /> */}
                 <TeamV1 />
                 {/* <PriceV1 /> */}

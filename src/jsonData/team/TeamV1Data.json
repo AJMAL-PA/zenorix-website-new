@@ -1,42 +1,58 @@
 [
     {
         "id": 1,
-        "thumb": "team1.png",
-        "name": "Daniel Jack",
-        "designation": "Creative Director",
-        "text": "Daniel Jack oversees all creative projects, bringing his keen eye for design and exceptional storytelling abilities to the table.",
+        "thumb": "team_shamil_shan.png",
+        "name": "Shamil Shan",
+        "designation": "Co-Founder, Designer",
+        "text": "Shamil is the Co-Founder and lead designer crafting innovative concepts and exceptional aesthetics.",
         "delay": 0
     },
     {
         "id": 2,
-        "thumb": "team2.png",
-        "name": "Bob Pasley",
-        "designation": "Lead Designer",
-        "text": "Bob Pabsley is the creative force behind our stunning visual designs with a strong background in UI/UX and graphic design.",
+        "thumb": "team_mhd_afnan.png",
+        "name": "Mhd Afnan",
+        "designation": "Co-Founder, Developer",
+        "text": "Afnan is the Co-Founder and lead developer architecting robust and scalable digital solutions.",
         "delay": 200
     },
     {
         "id": 3,
-        "thumb": "team3.png",
-        "name": "Adrew Onana",
-        "designation": "Senior Developer",
-        "text": "Andrew Onana is our tech guru, responsible for turning our creative visions into functional digital solutions.",
+        "thumb": "team_nihadh_hasni.png",
+        "name": "Nihadh Hasni",
+        "designation": "Co-Founder",
+        "text": "Nihadh is the Co-Founder driving strategic growth and executive leadership.",
         "delay": 400
     },
     {
         "id": 4,
-        "thumb": "team4.png",
-        "name": "Luka Modric",
-        "designation": "Project Manager",
-        "text": "James ensures that all our projects are delivered on time and within budget, making sure every project runs smoothly from start to finish.",
-        "delay": 0
+        "thumb": "team_aswin_kp.png",
+        "name": "Aswin KP",
+        "designation": "CMO, Editor",
+        "text": "Aswin is the CMO and lead editor leading brand marketing, media storytelling, and creative direction.",
+        "delay": 600
     },
     {
         "id": 5,
-        "thumb": "team5.png",
-        "name": "Toni Kross",
-        "designation": "Lead Visual",
-        "text": "Toni Kroos brings a fresh perspective to our design team. He helps our clients stand out in a crowded market.",
-        "delay": 200
+        "thumb": "team_aman_husain.png",
+        "name": "Aman Husain",
+        "designation": "Developer",
+        "text": "Aman is a developer building seamless and modern digital applications.",
+        "delay": 800
+    },
+    {
+        "id": 6,
+        "thumb": "team_jinto_raj.png",
+        "name": "Jinto Raj",
+        "designation": "BDA",
+        "text": "Jinto is a BDA driving business development and growth strategies.",
+        "delay": 1000
+    },
+    {
+        "id": 7,
+        "thumb": "team_ajmal.png",
+        "name": "Ajmal",
+        "designation": "Developer, BDA",
+        "text": "Ajmal is a developer and BDA driving technical excellence and business strategy.",
+        "delay": 1200
     }
 ]
