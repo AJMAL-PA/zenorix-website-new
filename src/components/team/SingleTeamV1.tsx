@@ -9,14 +9,22 @@ interface DataType {
   delay?: number;
 }
 
-const SingleTeamV1 = ({ member }: { member: DataType }) => {
+interface SingleTeamV1Props {
+  member: DataType;
+  cardWidth?: number;
+}
+
+const SingleTeamV1 = ({ member, cardWidth }: SingleTeamV1Props) => {
   const { thumb, name, designation } = member;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="flex-shrink-0 w-full md:w-[calc(50%-10px)] lg:w-[calc(25%-15px)] group relative aspect-[3/4] overflow-hidden rounded-xs cursor-pointer select-none"
-      style={{ backgroundColor: "#dcdfe3" }}
+      className="flex-shrink-0 group relative aspect-[3/4] overflow-hidden rounded-[18px] cursor-pointer select-none"
+      style={{
+        backgroundColor: "#dcdfe3",
+        width: cardWidth && cardWidth > 0 ? `${cardWidth}px` : undefined,
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

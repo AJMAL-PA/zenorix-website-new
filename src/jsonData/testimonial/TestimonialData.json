@@ -1,107 +1,51 @@
 [
     {
         "id": 1,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
+        "text": "Zenorix truly understands the power of storytelling, clean design, and technical excellence",
         "thumb": "testimonial1.png",
         "name": "Michael Richards",
         "designation": "GreenWave Energy"
     },
     {
         "id": 2,
-        "text": "Working with AIXOR has been a transformative experience for our business",
+        "text": "Working with Zenorix has been a transformative experience for our business growth",
         "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "Sarah Jenkins",
+        "designation": "Aura Commerce"
     },
     {
         "id": 3,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
+        "text": "Zenorix brought our vision to life with unprecedented speed and aesthetic perfection",
         "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "David Miller",
+        "designation": "Nexis Solutions"
     },
     {
         "id": 4,
-        "text": "We partnered with AIXOR to design our mobile app, and the results were phenomenal magic",
+        "text": "We partnered with Zenorix to design our platform, and the results exceeded every benchmark",
         "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "Elena Rostova",
+        "designation": "Verve Living"
     },
     {
         "id": 5,
-        "text": "Our corporate website needed a complete overhaul, and AIXOR delivered beyond our expectations",
+        "text": "Our web platform needed a complete overhaul, and Zenorix delivered beyond our highest expectations",
         "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "Marcus Vance",
+        "designation": "Hyperion Labs"
     },
     {
         "id": 6,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
+        "text": "Zenorix combines cutting-edge engineering with world-class user experience seamlessly",
         "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "Rachel Adams",
+        "designation": "Solace Health"
     },
     {
         "id": 7,
-        "text": "Working with AIXOR has been a transformative experience for our business",
+        "text": "The attention to detail and responsiveness from the Zenorix team is truly exceptional",
         "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 8,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
-        "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 9,
-        "text": "We partnered with AIXOR to design our mobile app, and the results were phenomenal magic",
-        "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 10,
-        "text": "Our corporate website needed a complete overhaul, and AIXOR delivered beyond our expectations",
-        "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 11,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
-        "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 12,
-        "text": "Working with AIXOR has been a transformative experience for our business",
-        "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 13,
-        "text": "Our corporate website needed a complete overhaul, and AIXOR delivered beyond our expectations",
-        "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 14,
-        "text": "AIXOR truly understands the power of storytelling and strategic marketing",
-        "thumb": "testimonial2.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
-    },
-    {
-        "id": 15,
-        "text": "Working with AIXOR has been a transformative experience for our business",
-        "thumb": "testimonial1.png",
-        "name": "Michael Richards",
-        "designation": "GreenWave Energy"
+        "name": "Liam Gallagher",
+        "designation": "Apex Digital"
     }
 ]

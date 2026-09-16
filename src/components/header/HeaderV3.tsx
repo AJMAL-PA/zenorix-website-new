@@ -2,11 +2,9 @@ import sidebarbg from "/assets/images/sidebarbg.png";
 import SocialShareV1 from "../social/SocialShareV1";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo1 from "/assets/images/logo-1.png";
 import useNotchScrollLink from "../../hooks/useNotchScrollLink";
 
 const HeaderV3 = () => {
-
     const [isSidebarActive, setIsSidebarActive] = useState(false);
     const [isHamburgActive, setIsHamburgActive] = useState(false);
 
@@ -15,10 +13,7 @@ const HeaderV3 = () => {
             setIsHamburgActive(window.scrollY >= 100);
         };
 
-        // Attach event listener
         window.addEventListener("scroll", handleScroll);
-
-        // Cleanup function
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
@@ -54,26 +49,27 @@ const HeaderV3 = () => {
                         <i className="las la-times" />
                     </span>
 
-                    {/* Sidebar image */}
                     <img src={sidebarbg} alt="sidebar" className="sidebar-shape" />
                     <div className="header-sidebar-top">
                         <ul>
                             <li>
-                                <span>Based in Hanoi,</span>
-                                <a href="mailto:email@example.com">E: MindBlowingArt2692@gmail.com</a>
+                                <span>Based in Kerala,</span>
+                                <a href="mailto:zenorix.group@gmail.com">zenorix.group@gmail.com</a>
                             </li>
                             <li>
-                                <span>VietNam</span>
-                                <a href="tel:+1234567890">(+84) 0123456789</a>
+                                <span>India</span>
+                                <a href="tel:+919774115681">+91 9774115681</a>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Sidebar menu */}
                     <nav className="sidebar-menu">
                         <ul className="menu" id="sidebar-menu-id">
                             <li>
                                 <a href="#about" onClick={handleCloseClick}>About Us</a>
+                            </li>
+                            <li>
+                                <a href="#why-zenorix" onClick={handleCloseClick}>Why Zenorix</a>
                             </li>
                             <li>
                                 <a href="#services" onClick={handleCloseClick}>Services</a>
@@ -82,83 +78,7 @@ const HeaderV3 = () => {
                                 <a href="#projects" onClick={handleCloseClick}>Projects</a>
                             </li>
                             <li>
-                                <a href="#awards" onClick={handleCloseClick}>Awards</a>
-                            </li>
-                            <li>
-                                <a href="#team" onClick={handleCloseClick}>Members</a>
-                            </li>
-                            <li>
-                                <a href="#pricing" onClick={handleCloseClick}>Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#contact" onClick={handleCloseClick}>Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className="header-sidebar-bottom">
-                        <ul>
-                            <SocialShareV1 />
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            {/* Notch Bar Menu Wrap */}
-            <div className="notch-bar-menu-wrap">
-                <ul>
-                    <li><a className="anchor active" href="#hero">Hero</a></li>
-                    <li><a className="anchor" href="#about">About</a></li>
-                    <li><a className="anchor" href="#services">Services</a></li>
-                    <li><a className="anchor" href="#projects">Projects</a></li>
-                    <li><a className="anchor" href="#awards">Awards</a></li>
-                    <li><a className="anchor" href="#team">Team</a></li>
-                    <li><a className="anchor" href="#pricing">Pricing</a></li>
-                    <li><a className="anchor" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            {/* Sidebar 2 */}
-            <div className={`header-sidebar-wrap ${isSidebarActive ? "active" : ""}`}>
-                <div className="header-sidebar-content">
-                    <span className="close-header-sidebar" onClick={handleCloseClick}>
-                        <i className="las la-times" />
-                    </span>
-
-                    {/* Sidebar image */}
-                    <img src={sidebarbg} alt="sidebar" className="sidebar-shape" />
-                    <div className="header-sidebar-top">
-                        <ul>
-                            <li>
-                                <span>Based in Hanoi,</span>
-                                <a href="mailto:email@example.com">E: MindBlowingArt2692@gmail.com</a>
-                            </li>
-                            <li>
-                                <span>VietNam</span>
-                                <a href="tel:+1234567890">(+84) 0123456789</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Sidebar menu */}
-                    <nav className="sidebar-menu">
-                        <ul className="menu" id="sidebar-menu-id">
-                            <li>
-                                <a href="#about" onClick={handleCloseClick}>About Us</a>
-                            </li>
-                            <li>
-                                <a href="#services" onClick={handleCloseClick}>Services</a>
-                            </li>
-                            <li>
-                                <a href="#projects" onClick={handleCloseClick}>Projects</a>
-                            </li>
-                            <li>
-                                <a href="#awards" onClick={handleCloseClick}>Awards</a>
-                            </li>
-                            <li>
-                                <a href="#team" onClick={handleCloseClick}>Members</a>
-                            </li>
-                            <li>
-                                <a href="#pricing" onClick={handleCloseClick}>Pricing</a>
+                                <a href="#team" onClick={handleCloseClick}>Team</a>
                             </li>
                             <li>
                                 <a href="#contact" onClick={handleCloseClick}>Contact</a>
@@ -177,49 +97,40 @@ const HeaderV3 = () => {
             <header className="header-menu-wrap">
                 <div className="custom-container">
                     <div className="custom-row">
-
                         <Link to="/" className="logo">
-                            <img src={logo1} alt="logo" />
+                            <img
+                                src="/assets/images/logoinblack-Photoroom%20(1).png"
+                                alt="Zenorix Logo"
+                                style={{ height: "60px", width: "auto", objectFit: "contain" }}
+                            />
                         </Link>
 
-                        {/* Navigation menu */}
                         <nav className="navbar">
                             <ul className="menu">
                                 <li>
-                                    <Link to="/">Home <span /></Link>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="/projects">Projects <span>(7)</span></Link>
+                                    <Link to="/about">About Us</Link>
                                 </li>
                                 <li>
-                                    <Link to="/about">About Us <span /></Link>
+                                    <Link to="/#projects">Services</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">Contact <span /></Link>
+                                    <Link to="/projects">Projects</Link>
                                 </li>
-                                <li className="dropdown-menu-item">
-                                    <Link to="#">All Pages <i className="las la-angle-down" /></Link>
-                                    <ul className="dropdown-list">
-                                        <li><Link to="/">Home - Ham Menu</Link></li>
-                                        <li><Link to="/home-2">Home - Notch Menu</Link></li>
-                                        <li><Link to="/about">About Us</Link></li>
-                                        <li><Link to="/projects">Projects</Link></li>
-                                        <li><Link to="/project-details/1">Project Single</Link></li>
-                                        <li><Link to="/blog">Blog</Link></li>
-                                        <li><Link to="/blog-details/1">Blog Detail</Link></li>
-                                        <li><Link to="/service-details/1">Service Single</Link></li>
-                                        <li><Link to="/faq">Faq</Link></li>
-                                        <li><Link to="/contact">Contact</Link></li>
-                                        <li><Link to="/not-found">404</Link></li>
-                                    </ul>
+                                <li>
+                                    <Link to="/faq">FAQs</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Contact</Link>
                                 </li>
                             </ul>
                         </nav>
 
-                        {/* Header right info */}
                         <div className="header-right-info">
-                            <a className="with-border" href="tel:+1234567890">(+84) 0123456789</a>
-                            <a href="mailto:example@gmail.com">
+                            <a className="with-border" href="tel:+919774115681">+91 9774115681</a>
+                            <a href="mailto:zenorix.group@gmail.com">
                                 <i className="iconoir-mail-out" />
                             </a>
                         </div>

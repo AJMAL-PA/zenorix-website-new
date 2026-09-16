@@ -1,5 +1,4 @@
 import btnArrow from "/assets/images/btn-arrow.svg"
-import footerBigLogo from "/assets/images/footer-big-logo.png"
 import { Link } from "react-router-dom";
 
 const FooterV1 = () => {
@@ -21,13 +20,13 @@ const FooterV1 = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="with-border" to="/about">
-                                                <img src={btnArrow} alt="icon" /> Members
+                                            <Link className="with-border" to="/#why-zenorix">
+                                                <img src={btnArrow} alt="icon" /> Why Zenorix
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="with-border" to="/about">
-                                                <img src={btnArrow} alt="icon" /> Stories
+                                            <Link className="with-border" to="/#projects">
+                                                <img src={btnArrow} alt="icon" /> Services
                                             </Link>
                                         </li>
                                         <li>
@@ -35,10 +34,15 @@ const FooterV1 = () => {
                                                 <img src={btnArrow} alt="icon" /> Projects
                                             </Link>
                                         </li>
+                                        <li>
+                                            <Link className="with-border" to="/faq">
+                                                <img src={btnArrow} alt="icon" /> FAQs
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="copyright">
-                                    &copy; {(new Date().getFullYear())} ALL RIGHTS RESERVED
+                                    &copy; {(new Date().getFullYear())} ZENORIX. ALL RIGHTS RESERVED
                                 </div>
                             </div>
                         </div>
@@ -51,10 +55,10 @@ const FooterV1 = () => {
                                         <h4>REACH OUT TO US</h4>
                                         <div className="links">
                                             <div className="split-text-anim">
-                                                <a data-aos="slide-up" data-aos-duration={700} href="tel:+840123456789" className="with-border">(+84) 0123456789</a>
+                                                <a data-aos="slide-up" data-aos-duration={700} href="tel:+919774115681" className="with-border">+91 9774115681</a>
                                             </div>
                                             <div className="split-text-anim">
-                                                <a data-aos="slide-up" data-aos-duration={700} href="mailto:MindBlowingArt2692@gmail.com" className="with-border">MindBlowingArt2692@gmail.com</a>
+                                                <a data-aos="slide-up" data-aos-duration={700} href="mailto:zenorix.group@gmail.com" className="with-border">zenorix.group@gmail.com</a>
                                             </div>
                                         </div>
                                     </div>
@@ -73,39 +77,29 @@ const FooterV1 = () => {
                                     <h4>Social</h4>
                                     <ul>
                                         <li>
-                                            <a className="with-border" href="https://instagram.com/" target="_blank">
+                                            <a className="with-border" href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
                                                 <img src={btnArrow} alt="icon" /> Instagram
                                             </a>
                                         </li>
                                         <li>
-                                            <a className="with-border" href="https://twitter.com/" target="_blank">
-                                                <img src={btnArrow} alt="icon" /> Twitter
+                                            <a className="with-border" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                                <img src={btnArrow} alt="icon" /> LinkedIn
                                             </a>
                                         </li>
                                         <li>
-                                            <a className="with-border" href="https://behance.com/" target="_blank">
-                                                <img src={btnArrow} alt="icon" /> Behance
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="with-border" href="https://dribbble.com/" target="_blank">
-                                                <img src={btnArrow} alt="icon" /> Dribbble
+                                            <a className="with-border" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                                <img src={btnArrow} alt="icon" /> GitHub
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="copyright">
-                                    BASED IN HANOI, VIETNAM
+                                    BASED IN KERALA, INDIA
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <div className="footer-bottom">
-                    <div className="split-text-anim">
-                        <img data-aos="slide-up" data-aos-duration={700} src={footerBigLogo} alt="logo" />
-                    </div>
-                </div> */}
             </footer>
         </>
     );

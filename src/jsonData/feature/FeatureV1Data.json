@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "thumb": "zenbrix-cover.png",
+    "thumb": "Zenbrix.png",
     "projectName": "Zenbrix",
     "subTitle1": "A complete business management platform built to",
     "subTitle2": "streamline operations, sales, and team productivity.",
@@ -19,20 +19,20 @@
   },
   {
     "id": 3,
-    "thumb": "urban-scholar.jpg",
-    "projectName": "ZenFee",
-    "subTitle1": "A modern membership and subscription management",
-    "subTitle2": "solution for gyms, clubs, and service businesses.",
-    "info": "Subscription SaaS",
+    "thumb": "BM.png",
+    "projectName": "BM Aesthetique",
+    "subTitle1": "Dermatologically tested, uncomplicated skincare designed to",
+    "subTitle2": "protect, repair, and restore natural skin balance.",
+    "info": "Skincare & Aesthetics",
     "date": "2026"
   },
   {
     "id": 4,
-    "thumb": "nivo-concepts.png",
-    "projectName": "eMahal",
-    "subTitle1": "A comprehensive ERP platform designed to digitize",
-    "subTitle2": "business operations with finance, HR, and workflow tools.",
-    "info": "Enterprise ERP",
+    "thumb": "nivo.png",
+    "projectName": "Nivo Concepts",
+    "subTitle1": "Constructing premium buildings and luxury interiors with",
+    "subTitle2": "turnkey architectural planning and unmatched precision.",
+    "info": "Architecture & Interiors",
     "date": "2026"
   }
 ]
