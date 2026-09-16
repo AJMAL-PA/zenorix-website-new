@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProjectDetailsContent from "../../components/project/ProjectDetailsContent";
 import FeatureV2Data from '../../jsonData/feature/FeatureV2Data.json';
 import LayoutV3 from "../../components/layouts/LayoutV3";
 
 const ProjectDetailsPage = () => {
+    const { id } = useParams();
 
-    const { id } = useParams()
-    const data = FeatureV2Data.find(project => project.id === parseInt(id || '0'));
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
+
+    const data = FeatureV2Data.find(project => project.id === parseInt(id || '0')) || FeatureV2Data[0];
 
     return (
         <>

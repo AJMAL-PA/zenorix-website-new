@@ -1,5 +1,5 @@
 import FooterV1 from "../footer/FooterV1";
-import HeaderV2 from "../header/HeaderV2";
+import HeaderV1 from "../header/HeaderV1";
 
 interface DataType {
     children?: React.ReactNode;
@@ -8,7 +8,7 @@ interface DataType {
 const LayoutV3 = ({ children }: DataType) => {
     return (
         <>
-            <HeaderV2 />
+            <HeaderV1 />
             {children}
             <FooterV1 />
         </>

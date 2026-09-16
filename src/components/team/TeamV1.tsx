@@ -1,21 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TeamV1Data from "../../jsonData/team/TeamV1Data.json";
 import SingleTeamV1 from "./SingleTeamV1";
 
 const TeamV1 = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
   const [currentIndex, setCurrentIndex] = useState(TeamV1Data.length);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+
+  const GAP = 20; // 20px gap
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+    const updateSize = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.clientWidth;
+        setContainerWidth(width);
+        if (width < 640) {
+          setVisibleCount(1);
+        } else if (width < 1024) {
+          setVisibleCount(2);
+        } else {
+          setVisibleCount(4);
+        }
+      }
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    let observer: ResizeObserver | null = null;
+    if (containerRef.current && typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(() => updateSize());
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", updateSize);
+      if (observer) observer.disconnect();
+    };
   }, []);
 
   const handlePrev = () => {
@@ -45,28 +68,33 @@ const TeamV1 = () => {
     }
   }, [isTransitioning]);
 
-  // Translation offset calculations for 20px gap (gap-5)
-  // Mobile: 1 card visible -> (100% + 20px)
-  // Tablet: 2 cards visible -> (50% + 10px)
-  // Desktop: 4 cards visible -> (25% + 5px)
-  const translateValue = isMobile
-    ? `calc(-${currentIndex} * (100% + 20px))`
-    : isTablet
-    ? `calc(-${currentIndex} * (50% + 10px))`
-    : `calc(-${currentIndex} * (25% + 5px))`;
+  // Precise Card Width and Step Calculation
+  const cardWidth =
+    containerWidth > 0
+      ? (containerWidth - (visibleCount - 1) * GAP) / visibleCount
+      : 0;
+
+  const step = cardWidth + GAP;
+  const translatePx = step > 0 ? currentIndex * step : 0;
 
   const extendedData = [...TeamV1Data, ...TeamV1Data, ...TeamV1Data];
 
   return (
-    <section className="py-20 md:py-28 px-6 sm:px-12 lg:px-0 bg-white text-neutral-900 w-full overflow-hidden border-t border-neutral-200" id="team">
+    <section
+      className="py-20 md:py-28 px-6 sm:px-12 lg:px-16 bg-white text-neutral-900 w-full overflow-hidden border-t border-neutral-200"
+      id="team"
+    >
       <div className="max-w-[1640px] mx-auto relative z-10">
-        
         {/* Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-14 md:mb-16 lg:px-[72px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-14 md:mb-16">
           {/* Title Area */}
           <div className="lg:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
-              <svg className="w-3.5 h-3.5 text-purple-600 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="w-3.5 h-3.5 text-purple-600 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M8 5v14l11-7z" />
               </svg>
               <span className="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase block font-sans">
@@ -74,7 +102,9 @@ const TeamV1 = () => {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-wide text-neutral-900 leading-tight uppercase">
-              Meet the Experts<br />Behind Our Work
+              Meet the Experts
+              <br />
+              Behind Our Work
             </h2>
           </div>
 
@@ -82,11 +112,12 @@ const TeamV1 = () => {
           <div className="lg:col-span-5">
             <p className="text-neutral-600 text-base md:text-lg leading-relaxed font-sans font-light">
               Our passionate innovators and leaders collaborate to deliver
-              world-class digital experiences built with excellence, precision, and custom aesthetic appeal.
+              world-class digital experiences built with excellence, precision,
+              and custom aesthetic appeal.
             </p>
           </div>
 
-          {/* Controls Area (Infinite loop - no stop) */}
+          {/* Controls Area */}
           <div className="lg:col-span-2 flex justify-end items-center gap-3">
             {/* Prev Button */}
             <button
@@ -135,20 +166,26 @@ const TeamV1 = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative w-full overflow-hidden">
+        <div ref={containerRef} className="relative w-full overflow-hidden">
           <div
-            className={`flex flex-row gap-5 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+            className={`flex flex-row ${
+              isTransitioning ? "transition-transform duration-500 ease-out" : ""
+            }`}
             style={{
-              transform: `translateX(${translateValue})`,
+              gap: `${GAP}px`,
+              transform: `translateX(-${translatePx}px)`,
             }}
             onTransitionEnd={handleTransitionEnd}
           >
             {extendedData.map((member, index) => (
-              <SingleTeamV1 member={member} key={`${member.id}-${index}`} />
+              <SingleTeamV1
+                member={member}
+                cardWidth={cardWidth}
+                key={`${member.id}-${index}`}
+              />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

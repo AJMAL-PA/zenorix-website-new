@@ -15,17 +15,17 @@ const HeroV2 = ({ title }: DataType) => {
                         <img className="hero-shape logo-3d-rotate" src={zenorixLogo} alt="Zenorix Logo" style={{ maxWidth: '300px', opacity: 0.8 }} />
                         <div className="hero-top">
                             <div className="hero-top-desc">
-                                <p>{`"At AIXOR, we hold that creativity sparks innovation. As a full-spectrum creative firm, we excel in converting ambitious ideas into engaging results."`}</p>
+                                <p>{`"At Zenorix, we hold that creativity sparks innovation. As a full-spectrum digital firm, we excel in converting ambitious ideas into high-impact digital experiences."`}</p>
                             </div>
                             <div className="author-info">
-                                <h4>Ahshan M</h4>
-                                <span>Chief Executive Officer</span>
+                                <h4>Zenorix Team</h4>
+                                <span>Leadership & Innovation</span>
                             </div>
                         </div>
                         <div className="hero-bottom">
                             <div className="left">
-                                <h2>{title ? title : "Not found Page"}</h2>
-                                <h2>AIXOR</h2>
+                                <h2>{title ? title : "Zenorix"}</h2>
+                                <h2>ZENORIX</h2>
                             </div>
                             <Link to="/contact" className="theme-btn">
                                 {`Let's Connect`}
