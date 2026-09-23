@@ -6,7 +6,11 @@
     "subTitle1": "A no-code eCommerce platform empowering businesses",
     "subTitle2": "to launch professional online stores in minutes.",
     "info": "No-Code E-Commerce",
-    "date": "2026"
+    "date": "2026",
+    "cardBg": "#E5ECD3",
+    "borderColor": "#D0DEC0",
+    "titleColor": "#1B3822",
+    "labelColor": "#5A725D"
   },
   {
     "id": 2,
@@ -15,7 +19,11 @@
     "subTitle1": "A complete business management platform built to",
     "subTitle2": "streamline operations, sales, and team productivity.",
     "info": "Business Management SaaS",
-    "date": "2026"
+    "date": "2026",
+    "cardBg": "#1D2289",
+    "borderColor": "rgba(255, 255, 255, 0.2)",
+    "titleColor": "#FFFFFF",
+    "labelColor": "rgba(255, 255, 255, 0.75)"
   },
   {
     "id": 3,
@@ -24,7 +32,11 @@
     "subTitle1": "Dermatologically tested, uncomplicated skincare designed to",
     "subTitle2": "protect, repair, and restore natural skin balance.",
     "info": "Skincare & Aesthetics",
-    "date": "2026"
+    "date": "2026",
+    "cardBg": "#312D2F",
+    "borderColor": "rgba(255, 255, 255, 0.15)",
+    "titleColor": "#FFFFFF",
+    "labelColor": "rgba(255, 255, 255, 0.7)"
   },
   {
     "id": 4,
@@ -33,6 +45,10 @@
     "subTitle1": "Constructing premium buildings and luxury interiors with",
     "subTitle2": "turnkey architectural planning and unmatched precision.",
     "info": "Architecture & Interiors",
-    "date": "2026"
+    "date": "2026",
+    "cardBg": "#DCC9B2",
+    "borderColor": "#C8B49B",
+    "titleColor": "#241D17",
+    "labelColor": "#6E5E4E"
   }
 ]

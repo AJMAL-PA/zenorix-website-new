@@ -1435,7 +1435,7 @@ a {
 }
 
 .feature-project {
-    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 35%, #ffffff 65%, #f9fafb 100%);
+    background: #ffffff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

@@ -8,34 +8,58 @@ interface DataType {
     subTitle2?: string;
     info?: string;
     date?: string;
+    cardBg?: string;
+    borderColor?: string;
+    titleColor?: string;
+    labelColor?: string;
 }
 
 const SingleFeatureV1 = ({ feature }: { feature: DataType }) => {
-    const { id, thumb, projectName, subTitle1, subTitle2, info, date } = feature;
+    const { 
+        id, 
+        thumb, 
+        projectName, 
+        subTitle1, 
+        subTitle2, 
+        info, 
+        date, 
+        cardBg, 
+        borderColor, 
+        titleColor, 
+        labelColor 
+    } = feature;
 
     return (
-        <div className="feature-project">
+        <div 
+            className="feature-project transition-all duration-500 shadow-sm"
+            style={{
+                background: cardBg || undefined,
+                borderColor: borderColor || undefined,
+            }}
+        >
             <div className="img-box">
-                <img src={`/assets/images/${thumb}`} alt="image" />
+                <img src={`/assets/images/${thumb}`} alt={projectName || "Project cover"} />
             </div>
             <div className="feature-project-infos">
                 <div className="feature-project-info-box">
-                    <span className="title">Project Name:</span>
+                    <span className="title" style={{ color: labelColor || undefined }}>Project Name:</span>
                     <Link to={`/project-details/${id}`}>
-                        <span className="subtitle">{projectName}</span>
+                        <span className="subtitle font-semibold" style={{ color: titleColor || undefined }}>{projectName}</span>
                     </Link>
                 </div>
                 <div className="feature-project-info-box">
-                    <span className="title">Description</span>
-                    <span className="subtitle">{subTitle1}<br />{subTitle2}</span>
+                    <span className="title" style={{ color: labelColor || undefined }}>Description</span>
+                    <span className="subtitle font-medium" style={{ color: titleColor || undefined }}>
+                        {subTitle1}<br />{subTitle2}
+                    </span>
                 </div>
                 <div className="feature-project-info-box">
-                    <span className="title">Industry:</span>
-                    <span className="subtitle">{info}</span>
+                    <span className="title" style={{ color: labelColor || undefined }}>Industry:</span>
+                    <span className="subtitle font-medium" style={{ color: titleColor || undefined }}>{info}</span>
                 </div>
                 <div className="feature-project-info-box">
-                    <span className="title">Release Date:</span>
-                    <span className="subtitle">{date}</span>
+                    <span className="title" style={{ color: labelColor || undefined }}>Release Date:</span>
+                    <span className="subtitle font-medium" style={{ color: titleColor || undefined }}>{date}</span>
                 </div>
             </div>
         </div>
@@ -43,3 +67,4 @@ const SingleFeatureV1 = ({ feature }: { feature: DataType }) => {
 };
 
 export default SingleFeatureV1;
+

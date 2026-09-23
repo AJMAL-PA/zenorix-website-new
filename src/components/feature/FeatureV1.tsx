@@ -10,7 +10,7 @@ const FeatureV1 = () => {
                 <div className="custom-container">
                     <div className="section-header section-header2">
                         <h2 className="section-title section-title2">
-                            Featured WOW <span>Products</span>
+                            Featured <span>Products</span>
                         </h2>
                         <p className="section-desc">
                             Explore our collection of cutting-edge products designed to empower your business and elevate your creative potential. <br />

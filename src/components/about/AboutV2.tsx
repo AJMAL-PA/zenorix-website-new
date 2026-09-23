@@ -1,3 +1,4 @@
+import { Clock, FolderCheck, Users } from 'lucide-react';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 
@@ -5,103 +6,104 @@ const AboutV2 = () => {
     return (
         <section className="about-sec py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] bg-black text-white relative overflow-hidden" id="about">
             <div className="max-w-[1440px] mx-auto">
-                {/* Top Section */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-                    {/* Left Column */}
-                    <div className="md:col-span-5 flex flex-col gap-6 md:gap-8">
-                        <div className="flex items-center gap-3">
-                            {/* Triangle Bullet */}
-                            <svg className="w-3.5 h-3.5 text-purple-500 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+                    {/* Left Column: Info & CTA */}
+                    <div className="lg:col-span-5 flex flex-col items-start">
+                        {/* Subtitle Badge */}
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="w-12 h-[3px] bg-purple-500 rounded-full inline-block"></span>
                             <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-semibold">
                                 About Company
                             </span>
                         </div>
-                        
-                        {/* Blueprint Outline Geometric Shape */}
-                        <div className="opacity-25 hover:opacity-40 transition-opacity duration-500 w-fit">
-                            <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                                <rect x="5" y="5" width="90" height="90" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
-                                <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
-                                <path d="M5 5 L95 95 M95 5 L5 95" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-                                
-                                {/* Logo stylized Z paths */}
-                                <path d="M 25 10 L 90 22 L 25 87" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M 75 90 L 10 78 L 75 13" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-                                
-                                {/* Drafting guide points */}
-                                <circle cx="25" cy="10" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                                <circle cx="90" cy="22" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                                <circle cx="25" cy="87" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                                <circle cx="75" cy="90" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                                <circle cx="10" cy="78" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                                <circle cx="75" cy="13" r="1.5" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                            </svg>
-                        </div>
+
+                        {/* Main Heading */}
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.18] mb-6">
+                            Digital Solutions <br className="hidden sm:inline" />
+                            for a <span className="text-purple-400 ml-1">Better Tomorrow</span>
+                        </h2>
+
+                        {/* Description Text */}
+                        <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed mb-8 max-w-xl">
+                            Zenorix is a premier digital agency building high-performance web applications, scalable software, and stunning user experiences that accelerate business growth through innovation.
+                        </p>
+
+                        {/* CTA Button */}
+                        <Link 
+                            to="/contact"
+                            className="inline-flex items-center justify-center px-8 py-3.5 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold rounded-full shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                        >
+                            Contact Us
+                        </Link>
                     </div>
 
-                    {/* Right Column */}
-                    <div className="md:col-span-7 flex flex-col gap-6 md:gap-8 justify-between h-full">
-                        <div className="flex flex-col gap-6">
-                            <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 font-light leading-relaxed max-w-2xl">
-                                Zenorix is a premier digital design and development agency. We build high-performance web applications, scalable software solutions, and stunning user experiences for startups and enterprises, integrating cutting-edge technology and design where they create real value.
+                    {/* Right Column: 3 Stat Cards */}
+                    <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
+                        {/* Card 1: Years */}
+                        <div className="bg-neutral-900/90 rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-sm hover:shadow-md hover:border-purple-500/50 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+                            {/* Circle Icon Indicator */}
+                            <div className="w-14 h-14 rounded-full bg-purple-950/60 text-purple-400 border border-purple-800/40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Clock className="w-6 h-6" />
+                            </div>
+
+                            {/* Number */}
+                            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-urbanist tracking-tight">
+                                <CountUp end={4} enableScrollSpy scrollSpyOnce />
+                                <span>+</span>
+                            </div>
+
+                            {/* Label */}
+                            <p className="mt-2 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.2em] font-semibold">
+                                YEARS
                             </p>
-                            <p className="text-base md:text-lg text-neutral-400 font-light leading-relaxed max-w-2xl">
-                                We are committed to pushing the boundaries of what’s possible, working together seamlessly to exceed expectations and deliver outstanding value to our clients. Our mission is to accelerate your business growth through innovation.
+
+                            {/* Purple Accent Underline */}
+                            <div className="w-12 h-[3px] bg-purple-500 rounded-full mt-3"></div>
+                        </div>
+
+                        {/* Card 2: Projects */}
+                        <div className="bg-neutral-900/90 rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-sm hover:shadow-md hover:border-purple-500/50 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+                            {/* Circle Icon Indicator */}
+                            <div className="w-14 h-14 rounded-full bg-purple-950/60 text-purple-400 border border-purple-800/40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <FolderCheck className="w-6 h-6" />
+                            </div>
+
+                            {/* Number */}
+                            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-urbanist tracking-tight">
+                                <CountUp end={50} enableScrollSpy scrollSpyOnce />
+                                <span>+</span>
+                            </div>
+
+                            {/* Label */}
+                            <p className="mt-2 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.2em] font-semibold">
+                                PROJECTS
                             </p>
-                        </div>
-                        
-                        <div>
-                            <Link 
-                                to="/contact" 
-                                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-white/20 rounded-full text-white text-sm font-medium hover:bg-white hover:text-black hover:border-white transition-all duration-300 group w-fit"
-                            >
-                                Contact us
-                                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 text-base">
-                                    ↗
-                                </span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
 
-                {/* Spacing */}
-                <div className="h-20 md:h-28"></div>
-
-                {/* Bottom Section - Statistics */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 border-t border-white/10 pt-16">
-                    {/* Stat 1 */}
-                    <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
-                            <CountUp end={4} enableScrollSpy scrollSpyOnce />
-                            <span className="text-purple-500 ml-1">+</span>
+                            {/* Purple Accent Underline */}
+                            <div className="w-12 h-[3px] bg-purple-500 rounded-full mt-3"></div>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
-                            Years of Experience
-                        </p>
-                    </div>
 
-                    {/* Stat 2 */}
-                    <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
-                            <CountUp end={30} enableScrollSpy scrollSpyOnce />
-                            <span className="text-purple-500 ml-1">+</span>
-                        </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
-                            Websites Delivered
-                        </p>
-                    </div>
+                        {/* Card 3: Clients */}
+                        <div className="bg-neutral-900/90 rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-sm hover:shadow-md hover:border-purple-500/50 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+                            {/* Circle Icon Indicator */}
+                            <div className="w-14 h-14 rounded-full bg-purple-950/60 text-purple-400 border border-purple-800/40 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Users className="w-6 h-6" />
+                            </div>
 
-                    {/* Stat 3 */}
-                    <div className="flex flex-col items-center text-center">
-                        <div className="flex items-baseline text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white font-urbanist">
-                            <CountUp end={50} enableScrollSpy scrollSpyOnce />
-                            <span className="text-purple-500 ml-1">+</span>
+                            {/* Number */}
+                            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-urbanist tracking-tight">
+                                <CountUp end={30} enableScrollSpy scrollSpyOnce />
+                                <span>+</span>
+                            </div>
+
+                            {/* Label */}
+                            <p className="mt-2 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.2em] font-semibold">
+                                CLIENTS
+                            </p>
+
+                            {/* Purple Accent Underline */}
+                            <div className="w-12 h-[3px] bg-purple-500 rounded-full mt-3"></div>
                         </div>
-                        <p className="mt-3 text-xs sm:text-sm text-neutral-400 uppercase tracking-[0.15em] font-medium">
-                            Happy Clients
-                        </p>
                     </div>
                 </div>
             </div>
@@ -109,4 +111,4 @@ const AboutV2 = () => {
     );
 };
 
-export default AboutV2;
+export default AboutV2;
