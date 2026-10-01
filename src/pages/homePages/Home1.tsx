@@ -18,7 +18,7 @@ const Home1Page = () => {
         <div className="aixor-main">
             <LayoutV1 hideHeader>
                 <HeroV1 />
-                <LogoMarquee />
+                {/* <LogoMarquee /> */}
                 <AboutV1 />
                 <WhyZenorix />
                 {/* <ServicesV1 /> */}

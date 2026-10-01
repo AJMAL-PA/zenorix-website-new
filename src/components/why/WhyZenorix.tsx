@@ -13,70 +13,110 @@ const iconMap = {
 
 const WhyZenorix = () => {
     return (
-        <section className="why-zenorix-sec py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] bg-white text-neutral-900 relative overflow-hidden border-t border-neutral-200" id="why-zenorix">
-            {/* Ambient Purple Background Glows */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-purple-200/30 blur-[140px] pointer-events-none rounded-full" />
-            <div className="absolute bottom-10 right-10 w-[400px] h-[300px] bg-indigo-200/20 blur-[120px] pointer-events-none rounded-full" />
-
-            <div className="max-w-[1640px] mx-auto relative z-10">
-                {/* Section Header */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-16 md:mb-20">
-                    <div className="lg:col-span-7 flex flex-col gap-4">
-                        <div className="flex items-center gap-3">
-                            <svg className="w-3.5 h-3.5 text-purple-500 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <section className="why-zenorix-sec py-16 sm:py-20 lg:py-28 px-6 sm:px-10 lg:px-16 2xl:px-24 bg-[#FAFAFC] text-neutral-900 relative overflow-hidden font-outfit w-full" id="why-zenorix">
+            <div className="max-w-[1680px] 2xl:max-w-[1880px] w-full mx-auto relative z-10">
+                
+                {/* Header: 2 Columns */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-end mb-12 sm:mb-16">
+                    <div className="lg:col-span-7 flex flex-col items-start">
+                        {/* Subtitle Badge */}
+                        <div className="flex items-center gap-2 mb-3">
+                            <svg className="w-2.5 h-2.5 text-[#8B5CF6] fill-current" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
-                            <span className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold">
+                            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-500">
                                 Why Choose Us
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.15] text-neutral-900">
-                            Why Leading Brands Partner With <span className="bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 bg-clip-text text-transparent font-medium">Zenorix</span>
+                        
+                        {/* Main Heading */}
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-950 leading-[1.15]">
+                            Why Businesses Choose <br />
+                            <span className="text-[#8B5CF6]">Zenorix</span>
                         </h2>
                     </div>
 
-                    <div className="lg:col-span-5 flex flex-col gap-6">
-                        <p className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed">
-                            We combine deep technical expertise with bespoke design to craft scalable, high-converting digital solutions that accelerate business transformation.
+                    <div className="lg:col-span-5 flex flex-col justify-end">
+                        <p className="text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-lg">
+                            We combine thoughtful design, reliable technology, and business-focused development to build digital solutions that are made to deliver real value.
                         </p>
                     </div>
                 </div>
 
-                {/* Grid of Reasons */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {/* 6 Reason Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {whyData.map((item) => {
                         const IconComponent = iconMap[item.icon as keyof typeof iconMap] || Sparkles;
+                        const isFeatured = item.isFeatured;
+
+                        if (isFeatured) {
+                            return (
+                                <div
+                                    key={item.id}
+                                    className="p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] text-white flex flex-col justify-between shadow-xl shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02]"
+                                >
+                                    <div>
+                                        {/* Card Top: Icon and Number */}
+                                        <div className="flex items-center justify-between mb-6">
+                                            <div className="w-11 h-11 rounded-xl bg-white/20 text-white flex items-center justify-center backdrop-blur-sm">
+                                                <IconComponent className="w-5 h-5" />
+                                            </div>
+                                            <span className="text-xs font-semibold text-white/70">
+                                                {item.number}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-xl font-bold text-white mb-2.5">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed mb-6">
+                                            {item.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Card Footer */}
+                                    <div className="pt-4 border-t border-white/20 flex items-center justify-between mt-auto">
+                                        <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-white/80">
+                                            Zenorix Standard
+                                        </span>
+                                        <CheckCircle2 className="w-4 h-4 text-white/80" />
+                                    </div>
+                                </div>
+                            );
+                        }
+
                         return (
                             <div
                                 key={item.id}
-                                className="group relative p-8 rounded-2xl bg-neutral-50/90 border border-neutral-200/80 hover:border-purple-500/40 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_10px_30px_-5px_rgba(168,85,247,0.12)] hover:-translate-y-1.5 flex flex-col justify-between"
+                                className="group p-7 sm:p-8 rounded-2xl bg-white border border-neutral-100/90 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-purple-200 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
                             >
-                                {/* Top Header of Card */}
                                 <div>
-                                    <div className="flex items-center justify-between mb-8">
-                                        <div className="w-12 h-12 rounded-xl bg-purple-100/80 border border-purple-300/40 flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-500 transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-                                            <IconComponent className="w-6 h-6" />
+                                    {/* Card Top: Icon and Number */}
+                                    <div className="flex items-center justify-between mb-6">
+                                        <div className="w-11 h-11 rounded-xl bg-[#F4EEFF] text-[#8B5CF6] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#8B5CF6] group-hover:text-white">
+                                            <IconComponent className="w-5 h-5" />
                                         </div>
-                                        <span className="text-sm font-mono text-neutral-500 group-hover:text-purple-400 transition-colors">
+                                        <span className="text-xs font-semibold text-neutral-400 group-hover:text-[#8B5CF6] transition-colors">
                                             {item.number}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-xl font-medium text-neutral-900 mb-3 group-hover:text-purple-700 transition-colors">
+                                    <h3 className="text-lg sm:text-xl font-bold text-neutral-950 mb-2.5 group-hover:text-[#8B5CF6] transition-colors">
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-sm text-neutral-600 font-normal leading-relaxed">
+                                    <p className="text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed mb-6">
                                         {item.description}
                                     </p>
                                 </div>
 
-                                {/* Subtle Accent Indicator at Bottom */}
-                                <div className="mt-8 pt-4 border-t border-neutral-200 flex items-center justify-between">
-                                    <span className="text-xs uppercase tracking-widest text-neutral-500 group-hover:text-neutral-300 transition-colors">
+                                {/* Card Footer */}
+                                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between mt-auto">
+                                    <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-neutral-400 group-hover:text-neutral-600 transition-colors">
                                         Zenorix Standard
                                     </span>
-                                    <CheckCircle2 className="w-4 h-4 text-neutral-600 group-hover:text-purple-400 transition-colors" />
+                                    <CheckCircle2 className="w-4 h-4 text-neutral-400 group-hover:text-[#8B5CF6] transition-colors" />
                                 </div>
                             </div>
                         );
@@ -84,26 +124,27 @@ const WhyZenorix = () => {
                 </div>
 
                 {/* Bottom Callout Banner */}
-                <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-neutral-50/95 via-purple-50/25 to-neutral-50/95 border border-neutral-200 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                    <div>
-                        <h4 className="text-xl sm:text-2xl font-normal text-neutral-900">
-                            Ready to transform your digital vision into reality?
+                <div className="mt-12 sm:mt-16 rounded-2xl bg-gradient-to-r from-[#8B5CF6] via-[#854CE6] to-[#7C3AED] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl shadow-purple-500/15 text-white">
+                    <div className="flex flex-col items-start">
+                        <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">
+                            Have a project in mind? Let's build it.
                         </h4>
-                        <p className="text-sm text-neutral-600 mt-1 font-normal">
-                            Let's discuss how Zenorix can power your next milestone.
+                        <p className="text-xs sm:text-sm text-white/85 mt-1 font-normal">
+                            Tell us what you're trying to achieve, and we'll help you figure out the right digital solution.
                         </p>
                     </div>
 
                     <Link
                         to="/contact"
-                        className="inline-flex items-center justify-center gap-3 px-7 py-3.5 border border-purple-600 rounded-full text-white text-sm font-medium bg-purple-600 hover:bg-purple-700 transition-all duration-300 group shrink-0 shadow-[0_4px_14px_rgba(168,85,247,0.2)]"
+                        className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 border border-white/30 text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm transition-all duration-300 hover:scale-105 shrink-0 backdrop-blur-sm"
                     >
                         <span>Start a Conversation</span>
-                        <span className="w-7 h-7 rounded-full bg-neutral-900 text-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                        <span className="w-6 h-6 rounded-full bg-white text-[#8B5CF6] flex items-center justify-center">
                             <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                     </Link>
                 </div>
+
             </div>
         </section>
     );

@@ -3,42 +3,48 @@
     "id": 1,
     "number": "01",
     "icon": "Cpu",
-    "title": "Cutting-Edge Engineering",
-    "description": "We architect robust, scalable software utilizing modern, high-performance tech stacks, ensuring lightning-fast load times, flawless responsiveness, and cloud-native security."
+    "title": "Built Around Your Business",
+    "description": "We don't believe in one-size-fits-all solutions. Every website, application, and software system we build is tailored to your goals, workflow, and customers.",
+    "isFeatured": true
   },
   {
     "id": 2,
     "number": "02",
     "icon": "Sparkles",
-    "title": "Bespoke & Premium UI/UX",
-    "description": "Every design system we create is crafted with visual excellence, fluid micro-interactions, and human-centered design principles that captivate users and elevate your brand."
+    "title": "Design Meets Technology",
+    "description": "We bring UI/UX design and development together to create digital experiences that look great, feel intuitive, and work reliably.",
+    "isFeatured": false
   },
   {
     "id": 3,
     "number": "03",
     "icon": "Zap",
-    "title": "Agile & High-Speed Execution",
-    "description": "Our streamlined development process guarantees rapid prototyping, continuous integration, zero guesswork, and on-time project delivery with transparent milestones."
+    "title": "Clear & Efficient Process",
+    "description": "From planning and design to development and launch, we keep the process structured, transparent, and easy to follow.",
+    "isFeatured": false
   },
   {
     "id": 4,
     "number": "04",
     "icon": "TrendingUp",
-    "title": "Growth & ROI Focused",
-    "description": "We don't just write code; we engineer digital products optimized for user retention, search engine authority, high conversion rates, and measurable business growth."
+    "title": "Focused on Business Value",
+    "description": "We build with purpose - helping businesses improve their online presence, simplify operations, reach customers, and grow.",
+    "isFeatured": false
   },
   {
     "id": 5,
     "number": "05",
     "icon": "ShieldCheck",
-    "title": "Uncompromised Quality & Security",
-    "description": "Rigorous automated testing, security audits, and enterprise-grade infrastructure ensure your digital assets operate with maximum uptime and reliability."
+    "title": "Built to Grow With You",
+    "description": "Our solutions are designed with scalability in mind, so your digital infrastructure can evolve as your business grows.",
+    "isFeatured": false
   },
   {
     "id": 6,
     "number": "06",
     "icon": "Headphones",
-    "title": "Dedicated Strategic Partnership",
-    "description": "We function as your extended technical leadership team, offering ongoing strategic consultation, post-launch scaling guidance, and proactive updates."
+    "title": "Partnership Beyond Launch",
+    "description": "Our relationship doesn't end when the project goes live. We remain available to support, improve, and evolve your digital solution.",
+    "isFeatured": false
   }
 ]

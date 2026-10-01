@@ -3,52 +3,36 @@
     "id": 1,
     "thumb": "zellyo-cover.png",
     "projectName": "Zellyo",
-    "subTitle1": "A no-code eCommerce platform empowering businesses",
-    "subTitle2": "to launch professional online stores in minutes.",
+    "description": "A complete business management platform built to streamline operations, sales, and team productivity.",
     "info": "No-Code E-Commerce",
     "date": "2026",
-    "cardBg": "#E5ECD3",
-    "borderColor": "#D0DEC0",
-    "titleColor": "#1B3822",
-    "labelColor": "#5A725D"
+    "cardBg": "#E5ECD3"
   },
   {
     "id": 2,
-    "thumb": "Zenbrix.png",
+    "thumb": "zenbrix-cover.png",
     "projectName": "Zenbrix",
-    "subTitle1": "A complete business management platform built to",
-    "subTitle2": "streamline operations, sales, and team productivity.",
+    "description": "A complete business management platform built to streamline operations, sales, and team productivity.",
     "info": "Business Management SaaS",
     "date": "2026",
-    "cardBg": "#1D2289",
-    "borderColor": "rgba(255, 255, 255, 0.2)",
-    "titleColor": "#FFFFFF",
-    "labelColor": "rgba(255, 255, 255, 0.75)"
+    "cardBg": "#1D2289"
   },
   {
     "id": 3,
     "thumb": "BM.png",
     "projectName": "BM Aesthetique",
-    "subTitle1": "Dermatologically tested, uncomplicated skincare designed to",
-    "subTitle2": "protect, repair, and restore natural skin balance.",
+    "description": "Dermatologically tested, uncomplicated skincare designed to protect, repair, and restore natural skin balance.",
     "info": "Skincare & Aesthetics",
     "date": "2026",
-    "cardBg": "#312D2F",
-    "borderColor": "rgba(255, 255, 255, 0.15)",
-    "titleColor": "#FFFFFF",
-    "labelColor": "rgba(255, 255, 255, 0.7)"
+    "cardBg": "#312D2F"
   },
   {
     "id": 4,
     "thumb": "nivo.png",
     "projectName": "Nivo Concepts",
-    "subTitle1": "Constructing premium buildings and luxury interiors with",
-    "subTitle2": "turnkey architectural planning and unmatched precision.",
+    "description": "Constructing premium buildings and luxury interiors with turnkey architectural planning and unmatched precision.",
     "info": "Architecture & Interiors",
     "date": "2026",
-    "cardBg": "#DCC9B2",
-    "borderColor": "#C8B49B",
-    "titleColor": "#241D17",
-    "labelColor": "#6E5E4E"
+    "cardBg": "#DCC9B2"
   }
 ]

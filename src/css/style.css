@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,6 +49,8 @@
 :root {
     --font_arapey: "Arapey", serif;
     --font_urbanist: "Urbanist", sans-serif;
+    --font_outfit: "Outfit", sans-serif;
+    --font_jakarta: "Plus Jakarta Sans", sans-serif;
     --primary: #111111;
     --secondary: #555555;
     --tertiary: #777777;

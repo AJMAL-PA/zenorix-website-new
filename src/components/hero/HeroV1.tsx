@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ZenorixZ from '../common/ZenorixZ';
 
 interface DraggableTileProps {
-    className: string;
-    style: React.CSSProperties;
+    className?: string;
+    style?: React.CSSProperties;
     title?: string;
+    isEmpty?: boolean;
     children?: React.ReactNode;
 }
 
-const DraggableTile: React.FC<DraggableTileProps> = ({ className, style, title, children }) => {
+const DraggableTile: React.FC<DraggableTileProps> = ({ className = '', style = {}, title, isEmpty = false, children }) => {
     const [pos, setPos] = React.useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = React.useState(false);
     const dragStartRef = React.useRef({ startX: 0, startY: 0, posAtStart: { x: 0, y: 0 } });
@@ -68,7 +70,11 @@ const DraggableTile: React.FC<DraggableTileProps> = ({ className, style, title, 
             className="pointer-events-auto"
         >
             <div
-                className={`${className} w-[76px] h-[76px] rounded-xl flex items-center justify-center`}
+                className={`w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-2xl flex items-center justify-center transition-all duration-300 floating-tile ${
+                    isEmpty
+                        ? 'bg-white/[0.05] border border-white/15 backdrop-blur-[2px] opacity-40 hover:opacity-75'
+                        : 'bg-white/[0.08] backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] hover:bg-white/[0.18] hover:border-white/40 hover:shadow-[0_12px_36px_0_rgba(255,255,255,0.15)] group'
+                } ${className}`}
                 style={innerStyle}
                 title={title}
             >
@@ -82,119 +88,116 @@ const HeroV1 = () => {
     return (
         <div
             id="hero"
-            className="w-full min-h-screen relative flex flex-col justify-between overflow-hidden font-urbanist"
+            className="w-full min-h-[92vh] lg:min-h-screen relative flex flex-col justify-between overflow-hidden font-outfit select-none"
             style={{
-                backgroundImage: `
-                    linear-gradient(to right, rgba(139, 92, 246, 0.08) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(139, 92, 246, 0.08) 1px, transparent 1px),
-                    radial-gradient(circle at 10% 90%, rgba(139, 92, 246, 0.35), transparent 55%),
-                    radial-gradient(circle at 90% 90%, rgba(168, 85, 247, 0.15), transparent 45%)
-                `,
-                backgroundSize: '60px 60px, 60px 60px, 100% 100%, 100% 100%',
-                backgroundColor: '#ffffff'
+                background: 'linear-gradient(135deg, #7c3aed 0%, #8b2be2 30%, #9333ea 65%, #7000df 100%)',
+                color: '#ffffff'
             }}
         >
-            {/* keyframe inject style block */}
+            {/* Ambient Background Styling & Giant Zenorix Z Watermark */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Center Radial Glow */}
+                <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[100px] opacity-35"
+                    style={{
+                        background: 'radial-gradient(ellipse at center, rgba(233, 213, 255, 0.4), rgba(168, 85, 247, 0.15), transparent 70%)'
+                    }}
+                />
+
+                {/* Giant Zenorix Z in background */}
+                <div className="absolute right-[-15%] sm:right-[-10%] lg:right-[0%] top-1/2 -translate-y-1/2 w-[650px] sm:w-[950px] lg:w-[1200px] xl:w-[1350px] opacity-20 pointer-events-none select-none transition-all duration-700">
+                    <ZenorixZ glow className="w-full h-auto" />
+                </div>
+            </div>
+
+            {/* Custom Keyframe Styles for Smooth Floating */}
             <style>{`
-                @keyframes float-slow {
+                @keyframes float-gentle {
                     0%, 100% {
                         transform: translateY(0px);
                     }
                     50% {
-                        transform: translateY(-8px);
+                        transform: translateY(-9px);
                     }
                 }
                 .floating-tile {
-                    animation: float-slow 6s ease-in-out infinite;
-                    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-                }
-                .active-tile {
-                    background-color: rgba(255, 255, 255, 0.08);
-                    border: 1px solid rgba(229, 231, 235, 0.6);
-                    box-shadow: none;
-                }
-                .active-tile svg, .active-tile div, .active-tile i {
-                    opacity: 0.35;
-                    transition: opacity 0.3s ease, filter 0.3s ease;
-                }
-                .empty-tile {
-                    background-color: rgba(249, 250, 251, 0.3);
-                    border: 1px solid rgba(229, 231, 235, 0.3);
-                    opacity: 0.4;
+                    animation: float-gentle 6s ease-in-out infinite;
                 }
                 .floating-tile:hover {
                     animation-play-state: paused !important;
                     transform: scale(1.08) translateY(-4px) !important;
-                    z-index: 50 !important;
-                }
-                .active-tile:hover {
-                    background-color: #ffffff !important;
-                    border-color: rgba(139, 92, 246, 0.5) !important;
-                    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.12), 0 8px 10px -6px rgba(139, 92, 246, 0.12) !important;
-                }
-                .active-tile:hover svg, .active-tile:hover div, .active-tile:hover i {
-                    opacity: 1 !important;
                 }
             `}</style>
 
-            {/* Integrated Header Menu */}
-            <header className="w-full max-w-7xl mx-auto px-6 sm:px-12 py-6 flex items-center justify-between z-30 relative">
-                {/* Logo */}
-                <Link to="/" className="flex items-center gap-3 select-none">
-                    <span className="text-purple-600 font-bold italic text-4xl leading-none">Z</span>
-                    <div className="flex flex-col">
-                        <span className="text-2xl font-bold text-purple-950 tracking-tight leading-none">zenorix</span>
-                        <span className="text-[9px] text-purple-400 font-semibold tracking-wider uppercase mt-1">Design. Build. Deploy</span>
-                    </div>
-                </Link>
+            {/* Top Pill Navigation Bar */}
+            <header className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-5 pb-2 z-30 relative">
+                <div className="w-full px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.15)] flex items-center justify-between transition-all duration-300 hover:border-white/30">
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center gap-3 select-none group">
+                        <div className="flex items-center justify-center w-8 h-8 transition-transform duration-300 group-hover:scale-105">
+                            <img src="/assets/images/Z (1).png" alt="Zenorix Z Logo" className="w-full h-full object-contain" />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+                                zenorix
+                            </span>
+                            <span className="text-[8px] sm:text-[9px] text-purple-200/90 font-semibold tracking-widest uppercase mt-0.5">
+                                Design . Build . Deploy
+                            </span>
+                        </div>
+                    </Link>
 
-                {/* Nav Links */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {['Home', 'Services', 'About Us', 'Why Us', 'Contact'].map((item) => (
-                        <a
-                            key={item}
-                            href={item === 'Home' ? '#' : `#${item.toLowerCase().replace(' ', '-')}`}
-                            className="text-neutral-700 hover:text-purple-600 text-sm font-semibold uppercase tracking-wider transition-colors duration-200"
-                        >
-                            {item}
-                        </a>
-                    ))}
-                </nav>
+                    {/* Nav Items */}
+                    <nav className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
+                        {[
+                            { name: 'HOME', href: '#' },
+                            { name: 'SERVICES', href: '#services' },
+                            { name: 'ABOUT US', href: '#about' },
+                            { name: 'WHY US', href: '#why-zenorix' },
+                            { name: 'CONTACT', href: '#contact' }
+                        ].map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                className="text-white/85 hover:text-white text-[13px] xl:text-sm font-semibold tracking-wider transition-colors duration-200"
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                    </nav>
 
-                {/* Enquire Now Header Action */}
-                <a
-                    href="#contact"
-                    className="bg-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-purple-700 transition-all duration-300 shadow-[0_4px_12px_rgba(139,92,246,0.2)] hover:shadow-[0_6px_16px_rgba(139,92,246,0.35)]"
-                >
-                    Enquire Now
-                </a>
+                    {/* Enquire Now Header Action Button */}
+                    <a
+                        href="#contact"
+                        className="bg-white text-purple-900 hover:bg-purple-50 font-bold px-5 sm:px-6 py-2 rounded-full text-xs sm:text-[13px] transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105"
+                    >
+                        Enquire Now
+                    </a>
+                </div>
             </header>
 
-            {/* Main Hero Content */}
-            <div className="flex-grow flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto z-20 pb-20 pt-10">
-                <h1
-                    className="text-4xl sm:text-5xl md:text-[60px] font-semibold tracking-tight text-center leading-[1.15] max-w-4xl"
-                    style={{ color: '#5b21b6', fontFamily: 'var(--font_urbanist)' }}
-                >
-                    Your Technology Partner For <br className="hidden md:inline" />
+            {/* Main Hero Center Content */}
+            <div className="flex-grow flex flex-col items-center justify-center text-center px-4 sm:px-6 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto z-20 pt-8 pb-16">
+                <h1 className="text-3xl sm:text-5xl md:text-[54px] lg:text-[60px] font-bold text-white tracking-tight leading-[1.12] max-w-4xl mx-auto">
+                    Your Technology Partner For<br />
                     The Next Stage Of Growth.
                 </h1>
 
-                <p className="mt-8 text-neutral-600 text-base sm:text-lg md:text-xl max-w-3xl font-medium leading-relaxed">
+                <p className="mt-6 text-sm sm:text-base md:text-lg text-purple-100/90 max-w-2xl mx-auto font-normal leading-relaxed">
                     Whether you're launching a startup, modernizing your business, or automating operations - we build technology that works.
                 </p>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 z-20">
+                {/* CTA Action Buttons */}
+                <div className="flex flex-row items-center justify-center gap-4 mt-9 z-20">
                     <a
-                        href="#why-zenorix"
-                        className="bg-white text-purple-600 border border-purple-600 px-6 py-2.5 rounded-full font-semibold text-base hover:bg-purple-50 transition-all duration-300 hover:scale-105 text-center min-w-[170px]"
+                        href="#services"
+                        className="bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-white/50 text-center min-w-[150px] sm:min-w-[170px]"
                     >
                         Explore Services
                     </a>
                     <a
                         href="#contact"
-                        className="bg-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-base hover:bg-purple-700 transition-all duration-300 hover:scale-105 shadow-[0_4px_14px_rgba(139,92,246,0.2)] text-center min-w-[170px]"
+                        className="bg-white text-purple-950 hover:bg-purple-50 font-bold px-7 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-105 text-center min-w-[150px] sm:min-w-[170px]"
                     >
                         Enquire Now
                     </a>
@@ -202,178 +205,237 @@ const HeroV1 = () => {
             </div>
 
             {/* Left Staggered Integration Cluster */}
-            <div className="absolute left-6 2xl:left-16 top-[63%] -translate-y-1/2 w-[428px] h-[428px] pointer-events-none hidden xl:block z-10">
+            <div className="absolute left-3 xl:left-8 2xl:left-14 top-[56%] -translate-y-1/2 w-[390px] h-[390px] pointer-events-none hidden lg:block z-10">
                 {/* Row 0 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '0px', left: '44px', animationDelay: '0s' }}
+                    isEmpty
+                    style={{ top: '0px', left: '30px', animationDelay: '0s' }}
                 />
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '0px', left: '132px', animationDelay: '-1.2s' }}
-                    title="Notion"
-                >
-                    <i className="fa-brands fa-notion text-[32px] text-neutral-800"></i>
-                </DraggableTile>
+                    isEmpty
+                    style={{ top: '0px', left: '110px', animationDelay: '-1.4s' }}
+                />
 
                 {/* Row 1 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '88px', left: '88px', animationDelay: '-2.4s' }}
+                    isEmpty
+                    style={{ top: '78px', left: '70px', animationDelay: '-2.8s' }}
                 />
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '88px', left: '176px', animationDelay: '-3.6s' }}
-                    title="Vue.js"
+                    title="Vite / Vue"
+                    style={{ top: '78px', left: '150px', animationDelay: '-4.2s' }}
                 >
-                    <i className="fa-brands fa-vuejs text-[32px] text-[#41b883]"></i>
+                    {/* Vite / Vue V icon */}
+                    <svg className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m3 5 9 14L21 5" />
+                        <path d="m8 5 4 6 4-6" />
+                    </svg>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '88px', left: '264px', animationDelay: '-4.8s' }}
                     title="Node.js"
+                    style={{ top: '78px', left: '230px', animationDelay: '-5.6s' }}
                 >
-                    <i className="fa-brands fa-node-js text-[32px] text-[#339933]"></i>
+                    {/* Node.js Hexagon */}
+                    <svg className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2z" />
+                        <path d="M12 12v8" />
+                        <path d="m12 12 8-4.5" />
+                        <path d="M12 12 4 7.5" />
+                    </svg>
                 </DraggableTile>
 
                 {/* Row 2 */}
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '176px', left: '132px', animationDelay: '-0.6s' }}
                     title="AWS"
+                    style={{ top: '156px', left: '110px', animationDelay: '-0.7s' }}
                 >
-                    <i className="fa-brands fa-aws text-[32px] text-[#ff9900]"></i>
+                    {/* AWS Logo / smile */}
+                    <div className="flex flex-col items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                        <span className="text-[13px] font-black tracking-tight leading-none lowercase">aws</span>
+                        <svg className="w-6 h-2 mt-0.5" viewBox="0 0 24 8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                            <path d="M2 2c6 4 14 4 20 0" />
+                        </svg>
+                    </div>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '176px', left: '220px', animationDelay: '-1.8s' }}
                     title="Python"
+                    style={{ top: '156px', left: '190px', animationDelay: '-2.1s' }}
                 >
-                    <i className="fa-brands fa-python text-[32px] text-[#3776ab]"></i>
+                    {/* Python */}
+                    <svg className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-200" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.9 1a5.1 5.1 0 0 0-5.1 5.1v1.8h5.2v.6H4.2A4.2 4.2 0 0 0 0 12.7a4.2 4.2 0 0 0 4.2 4.2h1.4v-2a3.6 3.6 0 0 1 3.6-3.6h5.2a2 2 0 0 0 2-2V6.1A5.1 5.1 0 0 0 11.9 1zm-1.8 1.8a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zm1.8 20.2a5.1 5.1 0 0 0 5.1-5.1v-1.8h-5.2v-.6h7.8a4.2 4.2 0 0 0 4.2-4.2 4.2 4.2 0 0 0-4.2-4.2h-1.4v2a3.6 3.6 0 0 1-3.6 3.6h-5.2a2 2 0 0 0-2 2v3.2a5.1 5.1 0 0 0 5.1 5.1zm1.8-1.8a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z" />
+                    </svg>
                 </DraggableTile>
 
                 {/* Row 3 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '264px', left: '176px', animationDelay: '-3s' }}
+                    isEmpty
+                    style={{ top: '234px', left: '150px', animationDelay: '-3.5s' }}
                 />
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '264px', left: '264px', animationDelay: '-4.2s' }}
                     title="HTML5"
+                    style={{ top: '234px', left: '230px', animationDelay: '-4.9s' }}
                 >
-                    <i className="fa-brands fa-html5 text-[32px] text-[#e34f26]"></i>
+                    {/* HTML5 Shield */}
+                    <div className="relative flex items-center justify-center text-white/80 group-hover:text-white">
+                        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M4 3l1.8 16.2L12 21l6.2-1.8L20 3H4z" />
+                        </svg>
+                        <span className="absolute text-[11px] font-bold">5</span>
+                    </div>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '264px', left: '352px', animationDelay: '-5.4s' }}
                     title="CSS3"
+                    style={{ top: '234px', left: '310px', animationDelay: '-6.3s' }}
                 >
-                    <i className="fa-brands fa-css3-alt text-[32px] text-[#1572b6]"></i>
+                    {/* CSS3 Shield */}
+                    <div className="relative flex items-center justify-center text-white/80 group-hover:text-white">
+                        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M4 3l1.8 16.2L12 21l6.2-1.8L20 3H4z" />
+                        </svg>
+                        <span className="absolute text-[11px] font-bold">3</span>
+                    </div>
                 </DraggableTile>
 
                 {/* Row 4 */}
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '352px', left: '220px', animationDelay: '-0.9s' }}
                     title="JavaScript"
+                    style={{ top: '312px', left: '190px', animationDelay: '-1.1s' }}
                 >
-                    <i className="fa-brands fa-js text-[32px] text-[#f7df1e]"></i>
+                    {/* JS */}
+                    <div className="flex items-center justify-center font-bold text-[15px] border-2 border-white/80 rounded-md px-1 py-0.5 leading-none text-white/80 group-hover:text-white group-hover:border-white">
+                        JS
+                    </div>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '352px', left: '308px', animationDelay: '-2.1s' }}
                     title="Docker"
+                    style={{ top: '312px', left: '270px', animationDelay: '-2.5s' }}
                 >
-                    <i className="fa-brands fa-docker text-[32px] text-[#0db7ed]"></i>
+                    {/* Docker Whale */}
+                    <svg className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 14c1.5 2.5 4.5 4 8 4 6 0 9-3.5 9-7 0-.5-.1-1-.2-1.5-1.5.5-3.3.5-4.8 0V8H4v6z" />
+                        <path d="M6 10h2v2H6z" />
+                        <path d="M9 10h2v2H9z" />
+                        <path d="M12 10h2v2h-2z" />
+                        <path d="M9 7h2v2H9z" />
+                        <path d="M12 7h2v2h-2z" />
+                    </svg>
                 </DraggableTile>
             </div>
 
             {/* Right Staggered Integration Cluster */}
-            <div className="absolute right-6 2xl:right-16 top-[63%] -translate-y-1/2 w-[428px] h-[428px] pointer-events-none hidden xl:block z-10">
+            <div className="absolute right-3 xl:right-8 2xl:right-14 top-[56%] -translate-y-1/2 w-[390px] h-[390px] pointer-events-none hidden lg:block z-10">
                 {/* Row 0 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '0px', left: '308px', animationDelay: '-0.5s' }}
-                />
-                <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '0px', left: '220px', animationDelay: '-1.7s' }}
                     title="React"
+                    style={{ top: '0px', left: '230px', animationDelay: '-0.8s' }}
                 >
-                    <i className="fa-brands fa-react text-[32px] text-[#087ea4] animate-[spin_12s_linear_infinite]"></i>
+                    {/* React Atom */}
+                    <svg className="w-8 h-8 text-white/80 group-hover:text-white animate-[spin_15s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(0 12 12)" />
+                        <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)" />
+                        <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    </svg>
                 </DraggableTile>
+                <DraggableTile 
+                    isEmpty
+                    style={{ top: '0px', left: '310px', animationDelay: '-2.2s' }}
+                />
 
                 {/* Row 1 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '88px', left: '264px', animationDelay: '-2.9s' }}
-                />
+                    title="Polygon / Web3"
+                    style={{ top: '78px', left: '150px', animationDelay: '-3.6s' }}
+                >
+                    {/* Diamond / Polygon */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m12 2 8 4.5v11L12 22 4 17.5v-11L12 2z" />
+                        <path d="M12 2v20" />
+                    </svg>
+                </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '88px', left: '176px', animationDelay: '-4.1s' }}
                     title="Figma"
+                    style={{ top: '78px', left: '230px', animationDelay: '-5.0s' }}
                 >
-                    <i className="fa-brands fa-figma text-[32px] text-[#a259ff]"></i>
+                    {/* Figma Logo */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="15.5" cy="8.5" r="3.5" />
+                        <path d="M5 5a3.5 3.5 0 0 1 7 0v7H8.5A3.5 3.5 0 0 1 5 8.5V5z" />
+                        <path d="M5 12a3.5 3.5 0 0 1 7 0v7a3.5 3.5 0 0 1-7 0v-7z" />
+                    </svg>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '88px', left: '88px', animationDelay: '-5.3s' }}
-                    title="Git"
-                >
-                    <i className="fa-brands fa-git-alt text-[32px] text-[#f05032]"></i>
-                </DraggableTile>
+                    isEmpty
+                    style={{ top: '78px', left: '310px', animationDelay: '-6.4s' }}
+                />
 
                 {/* Row 2 */}
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '176px', left: '220px', animationDelay: '-1.1s' }}
-                    title="GitHub"
+                    title="Database / Stack"
+                    style={{ top: '156px', left: '190px', animationDelay: '-1.3s' }}
                 >
-                    <i className="fa-brands fa-github text-[32px] text-neutral-800"></i>
+                    {/* Layered Stack */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2 8l10-5 10 5-10 5-10-5z" />
+                        <path d="M2 13l10 5 10-5" />
+                        <path d="M2 18l10 5 10-5" />
+                    </svg>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '176px', left: '132px', animationDelay: '-2.3s' }}
-                    title="Stack Overflow"
+                    title="GitHub"
+                    style={{ top: '156px', left: '270px', animationDelay: '-2.7s' }}
                 >
-                    <i className="fa-brands fa-stack-overflow text-[32px] text-[#f48024]"></i>
+                    {/* GitHub */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
                 </DraggableTile>
 
                 {/* Row 3 */}
                 <DraggableTile 
-                    className="empty-tile floating-tile"
-                    style={{ top: '264px', left: '176px', animationDelay: '-3.5s' }}
-                />
+                    title="Cloud"
+                    style={{ top: '234px', left: '110px', animationDelay: '-4.1s' }}
+                >
+                    {/* Cloud */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                    </svg>
+                </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '264px', left: '88px', animationDelay: '-4.7s' }}
                     title="Slack"
+                    style={{ top: '234px', left: '190px', animationDelay: '-5.5s' }}
                 >
-                    <i className="fa-brands fa-slack text-[32px] text-[#4a154b]"></i>
+                    {/* Slack */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+                    </svg>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '264px', left: '0px', animationDelay: '-5.9s' }}
-                    title="Cloudflare"
-                >
-                    <i className="fa-brands fa-cloudflare text-[32px] text-[#f38020]"></i>
-                </DraggableTile>
+                    isEmpty
+                    style={{ top: '234px', left: '270px', animationDelay: '-6.9s' }}
+                />
 
                 {/* Row 4 */}
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '352px', left: '132px', animationDelay: '-1.4s' }}
-                    title="Stripe"
+                    title="Three.js / WebGL"
+                    style={{ top: '312px', left: '150px', animationDelay: '-1.8s' }}
                 >
-                    <i className="fa-brands fa-stripe text-[32px] text-[#635bff]"></i>
+                    {/* Isometric Cube */}
+                    <svg className="w-7 h-7 text-white/80 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
                 </DraggableTile>
                 <DraggableTile 
-                    className="active-tile floating-tile cursor-pointer"
-                    style={{ top: '352px', left: '44px', animationDelay: '-2.6s' }}
-                    title="Codepen"
+                    title="Stripe"
+                    style={{ top: '312px', left: '230px', animationDelay: '-3.2s' }}
                 >
-                    <i className="fa-brands fa-codepen text-[32px] text-neutral-800"></i>
+                    {/* Stripe lowercase text */}
+                    <span className="text-[14px] font-bold tracking-tight lowercase text-white/80 group-hover:text-white">
+                        stripe
+                    </span>
                 </DraggableTile>
             </div>
         </div>
