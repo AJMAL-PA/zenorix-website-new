@@ -3,7 +3,7 @@
     "id": 1,
     "thumb": "zellyo-cover.png",
     "projectName": "Zellyo",
-    "description": "A complete business management platform built to streamline operations, sales, and team productivity.",
+    "description": "A no-code eCommerce platform empowering businesses to launch professional online stores in minutes.",
     "info": "No-Code E-Commerce",
     "date": "2026",
     "cardBg": "#E5ECD3"
@@ -16,23 +16,5 @@
     "info": "Business Management SaaS",
     "date": "2026",
     "cardBg": "#1D2289"
-  },
-  {
-    "id": 3,
-    "thumb": "BM.png",
-    "projectName": "BM Aesthetique",
-    "description": "Dermatologically tested, uncomplicated skincare designed to protect, repair, and restore natural skin balance.",
-    "info": "Skincare & Aesthetics",
-    "date": "2026",
-    "cardBg": "#312D2F"
-  },
-  {
-    "id": 4,
-    "thumb": "nivo.png",
-    "projectName": "Nivo Concepts",
-    "description": "Constructing premium buildings and luxury interiors with turnkey architectural planning and unmatched precision.",
-    "info": "Architecture & Interiors",
-    "date": "2026",
-    "cardBg": "#DCC9B2"
   }
 ]

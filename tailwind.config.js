@@ -57,6 +57,7 @@ export default {
         outfit: ['Outfit', 'sans-serif'],
         jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
         urbanist: ['Urbanist', 'sans-serif'],
+        degular: ['"Degular Demo"', 'Degular', 'sans-serif'],
       },
     },
   },

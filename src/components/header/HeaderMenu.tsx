@@ -23,7 +23,7 @@ const HeaderMenu = () => {
                         {/* Logo — left-anchored, vertically centered */}
                         <Link
                             to="/"
-                            className="logo"
+                            className="logo group"
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -33,8 +33,9 @@ const HeaderMenu = () => {
                             }}
                         >
                             <img
-                                src="/assets/images/logoinblack-Photoroom%20(1).png"
+                                src="/assets/images/zenorix3d.png"
                                 alt="Zenorix Logo"
+                                className="opacity-30 group-hover:opacity-100 hover:opacity-100 transition-all duration-300 cursor-pointer"
                                 style={{
                                     height: '70px',
                                     width: 'auto',

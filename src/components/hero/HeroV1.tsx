@@ -70,11 +70,10 @@ const DraggableTile: React.FC<DraggableTileProps> = ({ className = '', style = {
             className="pointer-events-auto"
         >
             <div
-                className={`w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-2xl flex items-center justify-center transition-all duration-300 floating-tile ${
-                    isEmpty
-                        ? 'bg-white/[0.05] border border-white/15 backdrop-blur-[2px] opacity-40 hover:opacity-75'
-                        : 'bg-white/[0.08] backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] hover:bg-white/[0.18] hover:border-white/40 hover:shadow-[0_12px_36px_0_rgba(255,255,255,0.15)] group'
-                } ${className}`}
+                className={`w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-2xl flex items-center justify-center transition-all duration-300 floating-tile ${isEmpty
+                    ? 'bg-white/[0.05] border border-white/15 backdrop-blur-[2px] opacity-40 hover:opacity-75'
+                    : 'bg-white/[0.08] backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] hover:bg-white/[0.18] hover:border-white/40 hover:shadow-[0_12px_36px_0_rgba(255,255,255,0.15)] group'
+                    } ${className}`}
                 style={innerStyle}
                 title={title}
             >
@@ -90,7 +89,7 @@ const HeroV1 = () => {
             id="hero"
             className="w-full min-h-[92vh] lg:min-h-screen relative flex flex-col justify-between overflow-hidden font-outfit select-none"
             style={{
-                background: 'linear-gradient(135deg, #7c3aed 0%, #8b2be2 30%, #9333ea 65%, #7000df 100%)',
+                background: "radial-gradient(ellipse 120% 95% at 50% 0%, #7e19e7 0%, #6d17cf 35%, #6214a8 70%, #540ea2 100%) no-repeat fixed",
                 color: '#ffffff'
             }}
         >
@@ -131,19 +130,11 @@ const HeroV1 = () => {
 
             {/* Top Pill Navigation Bar */}
             <header className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-5 pb-2 z-30 relative">
-                <div className="w-full px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.15)] flex items-center justify-between transition-all duration-300 hover:border-white/30">
+                <div className="w-full px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/20 border-t-white/35 shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] flex items-center justify-between transition-all duration-300 hover:bg-white/[0.11] hover:border-white/30">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-3 select-none group">
-                        <div className="flex items-center justify-center w-8 h-8 transition-transform duration-300 group-hover:scale-105">
-                            <img src="/assets/images/Z (1).png" alt="Zenorix Z Logo" className="w-full h-full object-contain" />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none">
-                                zenorix
-                            </span>
-                            <span className="text-[8px] sm:text-[9px] text-purple-200/90 font-semibold tracking-widest uppercase mt-0.5">
-                                Design . Build . Deploy
-                            </span>
+                    <Link to="/" className="flex items-center self-center select-none group leading-none my-auto">
+                        <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                            <img src="/assets/images/zenorix3d's.png" alt="Zenorix Logo" className="w-auto h-7 sm:h-8 object-contain invert drop-shadow-[0_2px_8px_rgba(255,255,255,0.2)] block -translate-y-[1px]" />
                         </div>
                     </Link>
 
@@ -159,7 +150,8 @@ const HeroV1 = () => {
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className="text-white/85 hover:text-white text-[13px] xl:text-sm font-semibold tracking-wider transition-colors duration-200"
+                                className="text-white/85 hover:text-white text-[13px] xl:text-sm font-urbanist font-medium tracking-wide transition-colors duration-200"
+                                style={{ fontFamily: "'Urbanist', sans-serif" }}
                             >
                                 {item.name}
                             </a>
@@ -169,7 +161,8 @@ const HeroV1 = () => {
                     {/* Enquire Now Header Action Button */}
                     <a
                         href="#contact"
-                        className="bg-white text-purple-900 hover:bg-purple-50 font-bold px-5 sm:px-6 py-2 rounded-full text-xs sm:text-[13px] transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105"
+                        className="bg-white text-[#7e19e7] hover:text-[#6a11b0] hover:bg-white/95 font-semibold px-6 py-2.5 rounded-full text-xs sm:text-sm transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95"
+                        style={{ fontFamily: "'Degular Demo', 'Degular', sans-serif" }}
                     >
                         Enquire Now
                     </a>
@@ -177,27 +170,42 @@ const HeroV1 = () => {
             </header>
 
             {/* Main Hero Center Content */}
-            <div className="flex-grow flex flex-col items-center justify-center text-center px-4 sm:px-6 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto z-20 pt-8 pb-16">
-                <h1 className="text-3xl sm:text-5xl md:text-[54px] lg:text-[60px] font-bold text-white tracking-tight leading-[1.12] max-w-4xl mx-auto">
-                    Your Technology Partner For<br />
-                    The Next Stage Of Growth.
+            <div className="flex-grow flex flex-col items-center justify-center text-center px-4 sm:px-6 w-full max-w-6xl xl:max-w-7xl mx-auto z-20 pt-8 pb-16">
+                <h1
+                    className="font-medium text-white w-full max-w-6xl mx-auto"
+                    style={{
+                        fontFamily: "'Clash Display Variable', 'Clash Display', sans-serif",
+                        fontWeight: 500,
+                        fontSize: 'clamp(32px, 5.2vw, 83.95px)',
+                        letterSpacing: '-2.1px',
+                        lineHeight: 'clamp(38px, 5.6vw, 84px)'
+                    }}
+                >
+                    <span className="sm:whitespace-nowrap">Your Technology Partner For</span><br />
+                    <span className="sm:whitespace-nowrap">The Next Stage Of Growth.</span>
                 </h1>
 
-                <p className="mt-6 text-sm sm:text-base md:text-lg text-purple-100/90 max-w-2xl mx-auto font-normal leading-relaxed">
-                    Whether you're launching a startup, modernizing your business, or automating operations - we build technology that works.
+                <p
+                    className="mt-6 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-normal leading-relaxed"
+                    style={{ fontFamily: "'Urbanist', sans-serif" }}
+                >
+                    Whether you're launching a startup, modernizing your business, or automating<br className="hidden sm:inline" />
+                    operations - we build technology that works.
                 </p>
 
                 {/* CTA Action Buttons */}
-                <div className="flex flex-row items-center justify-center gap-4 mt-9 z-20">
+                <div className="flex flex-row items-center justify-center gap-5 mt-9 z-20">
                     <a
                         href="#services"
-                        className="bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-white/50 text-center min-w-[150px] sm:min-w-[170px]"
+                        className="bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-white/50 text-center min-w-[160px] sm:min-w-[180px]"
+                        style={{ fontFamily: "'Urbanist', sans-serif" }}
                     >
                         Explore Services
                     </a>
                     <a
                         href="#contact"
-                        className="bg-white text-purple-950 hover:bg-purple-50 font-bold px-7 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-105 text-center min-w-[150px] sm:min-w-[170px]"
+                        className="bg-white text-[#7e19e7] hover:text-[#6a11b0] hover:bg-white/95 font-semibold px-9 py-3.5 rounded-full text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-105 text-center min-w-[160px] sm:min-w-[180px]"
+                        style={{ fontFamily: "'Degular Demo', 'Degular', sans-serif" }}
                     >
                         Enquire Now
                     </a>
@@ -207,21 +215,21 @@ const HeroV1 = () => {
             {/* Left Staggered Integration Cluster */}
             <div className="absolute left-3 xl:left-8 2xl:left-14 top-[56%] -translate-y-1/2 w-[390px] h-[390px] pointer-events-none hidden lg:block z-10">
                 {/* Row 0 */}
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '0px', left: '30px', animationDelay: '0s' }}
                 />
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '0px', left: '110px', animationDelay: '-1.4s' }}
                 />
 
                 {/* Row 1 */}
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '78px', left: '70px', animationDelay: '-2.8s' }}
                 />
-                <DraggableTile 
+                <DraggableTile
                     title="Vite / Vue"
                     style={{ top: '78px', left: '150px', animationDelay: '-4.2s' }}
                 >
@@ -231,7 +239,7 @@ const HeroV1 = () => {
                         <path d="m8 5 4 6 4-6" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Node.js"
                     style={{ top: '78px', left: '230px', animationDelay: '-5.6s' }}
                 >
@@ -245,7 +253,7 @@ const HeroV1 = () => {
                 </DraggableTile>
 
                 {/* Row 2 */}
-                <DraggableTile 
+                <DraggableTile
                     title="AWS"
                     style={{ top: '156px', left: '110px', animationDelay: '-0.7s' }}
                 >
@@ -257,7 +265,7 @@ const HeroV1 = () => {
                         </svg>
                     </div>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Python"
                     style={{ top: '156px', left: '190px', animationDelay: '-2.1s' }}
                 >
@@ -268,11 +276,11 @@ const HeroV1 = () => {
                 </DraggableTile>
 
                 {/* Row 3 */}
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '234px', left: '150px', animationDelay: '-3.5s' }}
                 />
-                <DraggableTile 
+                <DraggableTile
                     title="HTML5"
                     style={{ top: '234px', left: '230px', animationDelay: '-4.9s' }}
                 >
@@ -284,7 +292,7 @@ const HeroV1 = () => {
                         <span className="absolute text-[11px] font-bold">5</span>
                     </div>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="CSS3"
                     style={{ top: '234px', left: '310px', animationDelay: '-6.3s' }}
                 >
@@ -298,7 +306,7 @@ const HeroV1 = () => {
                 </DraggableTile>
 
                 {/* Row 4 */}
-                <DraggableTile 
+                <DraggableTile
                     title="JavaScript"
                     style={{ top: '312px', left: '190px', animationDelay: '-1.1s' }}
                 >
@@ -307,7 +315,7 @@ const HeroV1 = () => {
                         JS
                     </div>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Docker"
                     style={{ top: '312px', left: '270px', animationDelay: '-2.5s' }}
                 >
@@ -326,7 +334,7 @@ const HeroV1 = () => {
             {/* Right Staggered Integration Cluster */}
             <div className="absolute right-3 xl:right-8 2xl:right-14 top-[56%] -translate-y-1/2 w-[390px] h-[390px] pointer-events-none hidden lg:block z-10">
                 {/* Row 0 */}
-                <DraggableTile 
+                <DraggableTile
                     title="React"
                     style={{ top: '0px', left: '230px', animationDelay: '-0.8s' }}
                 >
@@ -338,13 +346,13 @@ const HeroV1 = () => {
                         <circle cx="12" cy="12" r="1.5" fill="currentColor" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '0px', left: '310px', animationDelay: '-2.2s' }}
                 />
 
                 {/* Row 1 */}
-                <DraggableTile 
+                <DraggableTile
                     title="Polygon / Web3"
                     style={{ top: '78px', left: '150px', animationDelay: '-3.6s' }}
                 >
@@ -354,7 +362,7 @@ const HeroV1 = () => {
                         <path d="M12 2v20" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Figma"
                     style={{ top: '78px', left: '230px', animationDelay: '-5.0s' }}
                 >
@@ -365,13 +373,13 @@ const HeroV1 = () => {
                         <path d="M5 12a3.5 3.5 0 0 1 7 0v7a3.5 3.5 0 0 1-7 0v-7z" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '78px', left: '310px', animationDelay: '-6.4s' }}
                 />
 
                 {/* Row 2 */}
-                <DraggableTile 
+                <DraggableTile
                     title="Database / Stack"
                     style={{ top: '156px', left: '190px', animationDelay: '-1.3s' }}
                 >
@@ -382,7 +390,7 @@ const HeroV1 = () => {
                         <path d="M2 18l10 5 10-5" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="GitHub"
                     style={{ top: '156px', left: '270px', animationDelay: '-2.7s' }}
                 >
@@ -393,7 +401,7 @@ const HeroV1 = () => {
                 </DraggableTile>
 
                 {/* Row 3 */}
-                <DraggableTile 
+                <DraggableTile
                     title="Cloud"
                     style={{ top: '234px', left: '110px', animationDelay: '-4.1s' }}
                 >
@@ -402,7 +410,7 @@ const HeroV1 = () => {
                         <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Slack"
                     style={{ top: '234px', left: '190px', animationDelay: '-5.5s' }}
                 >
@@ -411,13 +419,13 @@ const HeroV1 = () => {
                         <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     isEmpty
                     style={{ top: '234px', left: '270px', animationDelay: '-6.9s' }}
                 />
 
                 {/* Row 4 */}
-                <DraggableTile 
+                <DraggableTile
                     title="Three.js / WebGL"
                     style={{ top: '312px', left: '150px', animationDelay: '-1.8s' }}
                 >
@@ -428,7 +436,7 @@ const HeroV1 = () => {
                         <line x1="12" y1="22.08" x2="12" y2="12" />
                     </svg>
                 </DraggableTile>
-                <DraggableTile 
+                <DraggableTile
                     title="Stripe"
                     style={{ top: '312px', left: '230px', animationDelay: '-3.2s' }}
                 >

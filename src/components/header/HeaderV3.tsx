@@ -97,10 +97,11 @@ const HeaderV3 = () => {
             <header className="header-menu-wrap">
                 <div className="custom-container">
                     <div className="custom-row">
-                        <Link to="/" className="logo">
+                        <Link to="/" className="logo group">
                             <img
-                                src="/assets/images/logoinblack-Photoroom%20(1).png"
+                                src="/assets/images/zenorix3d's.png"
                                 alt="Zenorix Logo"
+                                className="opacity-30 group-hover:opacity-100 hover:opacity-100 transition-all duration-300 cursor-pointer"
                                 style={{ height: "60px", width: "auto", objectFit: "contain" }}
                             />
                         </Link>
