@@ -81,27 +81,27 @@ const TeamV1 = () => {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 sm:px-12 lg:px-16 bg-white text-neutral-900 w-full overflow-hidden border-t border-neutral-200"
+      className="py-20 md:py-28 px-6 sm:px-12 lg:px-[72px] bg-white text-neutral-900 w-full overflow-hidden border-t border-neutral-200 font-degular"
       id="team"
     >
-      <div className="max-w-[1640px] mx-auto relative z-10">
-        {/* Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-14 md:mb-16">
+      <div className="max-w-[1680px] 2xl:max-w-[1880px] mx-auto relative z-10">
+        {/* Header Grid with bottom border */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end pb-8 md:pb-10 border-b border-neutral-200 mb-10 md:mb-14">
           {/* Title Area */}
           <div className="lg:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
               <svg
-                className="w-3.5 h-3.5 text-purple-600 fill-current"
+                className="w-3.5 h-3.5 fill-[#8A2CE0] shrink-0 transform translate-y-[-1px]"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path d="M8 5v14l11-7z" />
               </svg>
-              <span className="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase block font-sans">
-                Our Team
+              <span className="text-xs sm:text-sm md:text-[15px] font-medium tracking-[0.25em] text-neutral-900 uppercase" style={{ fontWeight: 500 }}>
+                OUR TEAM
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans tracking-wide text-neutral-900 leading-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-neutral-900 leading-tight uppercase" style={{ fontWeight: 500 }}>
               Meet the Experts
               <br />
               Behind Our Work
@@ -110,7 +110,7 @@ const TeamV1 = () => {
 
           {/* Description Area */}
           <div className="lg:col-span-5">
-            <p className="text-neutral-600 text-base md:text-lg leading-relaxed font-sans font-light">
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed font-medium" style={{ fontWeight: 500 }}>
               Our passionate innovators and leaders collaborate to deliver
               world-class digital experiences built with excellence, precision,
               and custom aesthetic appeal.
@@ -122,7 +122,7 @@ const TeamV1 = () => {
             {/* Prev Button */}
             <button
               onClick={handlePrev}
-              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-purple-600 text-white hover:scale-105 shadow-sm cursor-pointer"
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-[#8A2CE0] text-white hover:scale-105 shadow-sm cursor-pointer"
               aria-label="Previous team members"
             >
               <svg
@@ -144,7 +144,7 @@ const TeamV1 = () => {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-purple-600 text-white hover:scale-105 shadow-sm cursor-pointer"
+              className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-neutral-900 hover:bg-[#8A2CE0] text-white hover:scale-105 shadow-sm cursor-pointer"
               aria-label="Next team members"
             >
               <svg

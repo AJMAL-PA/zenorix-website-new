@@ -20,7 +20,7 @@ const SingleTeamV1 = ({ member, cardWidth }: SingleTeamV1Props) => {
 
   return (
     <div
-      className="flex-shrink-0 group relative aspect-[3/4] overflow-hidden rounded-[18px] cursor-pointer select-none"
+      className="flex-shrink-0 group relative aspect-[3/4] overflow-hidden rounded-[6px] border border-neutral-200/80 cursor-pointer select-none"
       style={{
         backgroundColor: "#dcdfe3",
         width: cardWidth && cardWidth > 0 ? `${cardWidth}px` : undefined,

@@ -2,26 +2,23 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Track if the popup has been shown in the current page load lifetime
-let hasShownInLifetime = false;
+export const openContactPopup = () => {
+  window.dispatchEvent(new CustomEvent("open-contact-popup"));
+};
 
 const ContactPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Check if the popup has been shown in this page load lifetime
-    if (!hasShownInLifetime) {
-      // Trigger after a 1.2s delay for a premium entry flow
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 1200);
-      return () => clearTimeout(timer);
-    }
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener("open-contact-popup", handleOpen);
+    return () => {
+      window.removeEventListener("open-contact-popup", handleOpen);
+    };
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    hasShownInLifetime = true;
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -68,12 +65,12 @@ const ContactPopup: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="relative w-full max-w-[950px] bg-white rounded-3xl shadow-2xl overflow-hidden z-10 grid grid-cols-1 md:grid-cols-2 text-black"
+            className="relative w-full max-w-[950px] bg-white rounded-[6px] shadow-2xl overflow-hidden z-10 grid grid-cols-1 md:grid-cols-2 text-black"
           >
             {/* Close Button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-500 hover:text-black hover:scale-110 transition-all z-20 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200"
+              className="absolute top-4 right-4 text-gray-500 hover:text-black hover:scale-110 transition-all z-20 w-8 h-8 flex items-center justify-center rounded-[6px] bg-gray-100 hover:bg-gray-200"
               aria-label="Close Popup"
             >
               <svg
@@ -110,7 +107,7 @@ const ContactPopup: React.FC = () => {
                 <img
                   src="/assets/images/contact_popup_team.png"
                   alt="Zenorix Team"
-                  className="w-full max-w-[340px] md:max-w-full h-auto object-contain rounded-xl"
+                  className="w-full max-w-[340px] md:max-w-full h-auto object-contain rounded-[6px]"
                   loading="lazy"
                 />
               </div>
@@ -130,7 +127,7 @@ const ContactPopup: React.FC = () => {
                     placeholder="Enter full name"
                     required
                     autoComplete="name"
-                    className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-xl px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
+                    className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-[6px] px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
                   />
                 </div>
 
@@ -147,7 +144,7 @@ const ContactPopup: React.FC = () => {
                       placeholder="Enter phone number"
                       required
                       autoComplete="tel"
-                      className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-xl px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
+                      className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-[6px] px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
                     />
                   </div>
 
@@ -162,7 +159,7 @@ const ContactPopup: React.FC = () => {
                       placeholder="Enter e-mail address"
                       required
                       autoComplete="email"
-                      className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-xl px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
+                      className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-[6px] px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -176,7 +173,7 @@ const ContactPopup: React.FC = () => {
                     name="message"
                     rows={4}
                     placeholder="Tell us about project"
-                    className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-xl px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all resize-none"
+                    className="w-full bg-[#f3f4f6] text-neutral-900 border-0 rounded-[6px] px-4 py-3 text-sm placeholder:text-neutral-400 focus:bg-[#e5e7eb] focus:ring-2 focus:ring-neutral-900 outline-none transition-all resize-none"
                   />
                 </div>
 
@@ -184,7 +181,7 @@ const ContactPopup: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full bg-black hover:bg-neutral-800 text-white font-medium py-3.5 px-6 rounded-full flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm shadow-lg shadow-neutral-300"
+                    className="w-full bg-black hover:bg-neutral-800 text-white font-medium py-3.5 px-6 rounded-[6px] flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm shadow-lg shadow-neutral-300"
                   >
                     Send Enquiry
                     <span className="font-sans font-light text-base">→</span>

@@ -20,7 +20,7 @@ const SingleSelectedWork = ({ work }: { work: SelectedWorkType }) => {
             className="group block w-full focus:outline-none"
         >
             {/* Image Card Container */}
-            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[24px] sm:rounded-[32px] md:rounded-[36px] bg-neutral-100 border border-neutral-200/80 group-hover:border-purple-400/60 transition-all duration-500 shadow-sm hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.18)]">
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[6px] bg-neutral-100 border border-neutral-200/80 group-hover:border-purple-400/60 transition-all duration-500 shadow-sm hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.18)]">
                 <img
                     src={`/assets/images/${thumb}`}
                     alt={projectName}

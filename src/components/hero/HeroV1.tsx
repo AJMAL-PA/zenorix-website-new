@@ -87,9 +87,9 @@ const HeroV1 = () => {
     return (
         <div
             id="hero"
-            className="w-full min-h-[92vh] lg:min-h-screen relative flex flex-col justify-between overflow-hidden font-outfit select-none"
+            className="w-full min-h-[92vh] lg:min-h-screen relative flex flex-col justify-between overflow-hidden font-degular select-none"
             style={{
-                background: "radial-gradient(ellipse 120% 95% at 50% 0%, #7e19e7 0%, #6d17cf 35%, #6214a8 70%, #540ea2 100%) no-repeat fixed",
+                background: "radial-gradient(ellipse 120% 95% at 50% 0%, #8A2CE0 0%, #7921cd 35%, #6917b5 70%, #59109e 100%) no-repeat fixed",
                 color: '#ffffff'
             }}
         >
@@ -99,7 +99,7 @@ const HeroV1 = () => {
                 <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[100px] opacity-35"
                     style={{
-                        background: 'radial-gradient(ellipse at center, rgba(233, 213, 255, 0.4), rgba(168, 85, 247, 0.15), transparent 70%)'
+                        background: 'radial-gradient(ellipse at center, rgba(233, 213, 255, 0.4), rgba(138, 44, 224, 0.15), transparent 70%)'
                     }}
                 />
 
@@ -150,8 +150,8 @@ const HeroV1 = () => {
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className="text-white/85 hover:text-white text-[13px] xl:text-sm font-urbanist font-medium tracking-wide transition-colors duration-200"
-                                style={{ fontFamily: "'Urbanist', sans-serif" }}
+                                className="text-white/85 hover:text-white text-[13px] xl:text-sm font-degular font-medium tracking-wide transition-colors duration-200"
+                                style={{ fontFamily: "'Degular Display Demo', 'Degular Demo', 'Degular', sans-serif", fontWeight: 500 }}
                             >
                                 {item.name}
                             </a>
@@ -161,8 +161,8 @@ const HeroV1 = () => {
                     {/* Enquire Now Header Action Button */}
                     <a
                         href="#contact"
-                        className="bg-white text-[#7e19e7] hover:text-[#6a11b0] hover:bg-white/95 font-semibold px-6 py-2.5 rounded-full text-xs sm:text-sm transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95"
-                        style={{ fontFamily: "'Degular Demo', 'Degular', sans-serif" }}
+                        className="bg-white text-[#8A2CE0] hover:text-[#741ebd] hover:bg-white/95 font-medium px-6 py-2.5 rounded-full text-xs sm:text-sm transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95"
+                        style={{ fontFamily: "'Degular Display Demo', 'Degular Demo', 'Degular', sans-serif", fontWeight: 500 }}
                     >
                         Enquire Now
                     </a>
@@ -186,8 +186,8 @@ const HeroV1 = () => {
                 </h1>
 
                 <p
-                    className="mt-6 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-normal leading-relaxed"
-                    style={{ fontFamily: "'Urbanist', sans-serif" }}
+                    className="mt-6 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-medium leading-relaxed"
+                    style={{ fontFamily: "'Degular Display Demo', 'Degular Demo', 'Degular', sans-serif", fontWeight: 500 }}
                 >
                     Whether you're launching a startup, modernizing your business, or automating<br className="hidden sm:inline" />
                     operations - we build technology that works.
@@ -197,15 +197,15 @@ const HeroV1 = () => {
                 <div className="flex flex-row items-center justify-center gap-5 mt-9 z-20">
                     <a
                         href="#services"
-                        className="bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-white/50 text-center min-w-[160px] sm:min-w-[180px]"
-                        style={{ fontFamily: "'Urbanist', sans-serif" }}
+                        className="bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md px-8 py-3.5 rounded-full font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-white/50 text-center min-w-[160px] sm:min-w-[180px]"
+                        style={{ fontFamily: "'Degular Display Demo', 'Degular Demo', 'Degular', sans-serif", fontWeight: 500 }}
                     >
                         Explore Services
                     </a>
                     <a
                         href="#contact"
-                        className="bg-white text-[#7e19e7] hover:text-[#6a11b0] hover:bg-white/95 font-semibold px-9 py-3.5 rounded-full text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-105 text-center min-w-[160px] sm:min-w-[180px]"
-                        style={{ fontFamily: "'Degular Demo', 'Degular', sans-serif" }}
+                        className="bg-white text-[#8A2CE0] hover:text-[#741ebd] hover:bg-white/95 font-medium px-9 py-3.5 rounded-full text-sm sm:text-base shadow-[0_8px_25px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-105 text-center min-w-[160px] sm:min-w-[180px]"
+                        style={{ fontFamily: "'Degular Display Demo', 'Degular Demo', 'Degular', sans-serif", fontWeight: 500 }}
                     >
                         Enquire Now
                     </a>

@@ -2,7 +2,6 @@ import AboutV1 from "../../components/about/AboutV1";
 import WhyZenorix from "../../components/why/WhyZenorix";
 import AwardsV1 from "../../components/awards/AwardsV1";
 import ContactV1 from "../../components/contact/ContactV1";
-import FeatureV1 from "../../components/feature/FeatureV1";
 import HeroV1 from "../../components/hero/HeroV1";
 import LayoutV1 from "../../components/layouts/LayoutV1";
 import LogoMarquee from "../../components/partner/LogoMarquee";
@@ -10,6 +9,7 @@ import PartnerV1 from "../../components/partner/PartnerV1";
 import PriceV1 from "../../components/pricing/PriceV1";
 import ServicesV1 from "../../components/services/ServicesV1";
 import SelectedWork from "../../components/work/SelectedWork";
+import FeaturedProducts from "../../components/work/FeaturedProducts";
 import TeamV1 from "../../components/team/TeamV1";
 import TestimonialV1 from "../../components/testimonial/TestimonialV1";
 
@@ -22,7 +22,7 @@ const Home1Page = () => {
                 <AboutV1 />
                 <WhyZenorix />
                 {/* <ServicesV1 /> */}
-                <FeatureV1 />
+                <FeaturedProducts />
                 <SelectedWork />
                 {/* <AwardsV1 /> */}
                 <TeamV1 />
